@@ -1,9 +1,8 @@
-# humanstxt.org/
-# The humans responsible & technology colophon
-
 # TEAM
 
-    <name> -- <role> -- <twitter>
+  Front-end, back-end, devops, design: Dan Sazonov
+  Contact: p-294803@ya.ru
+  Github: @dan-sazonov
 
 # THANKS
 
