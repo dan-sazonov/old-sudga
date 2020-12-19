@@ -1,10 +1,16 @@
 # Давняя Суджа    
-![GitHub](https://img.shields.io/github/license/dan-sazonov/old-sudga) ![OpenSource](https://img.shields.io/badge/Open%20Source-%E2%9D%A4%EF%B8%8F-blue)
+![GitHub](https://img.shields.io/github/license/dan-sazonov/old-sudga)
+![OpenSource](https://img.shields.io/badge/Open%20Source-%E2%9D%A4%EF%B8%8F-blue)
 > The project is being developed in Russian. Translation into other languages is not planned for the foreseeable future.    
 ## О проекте
 Сайт для систематизации информации об исторически значимых местах Суджанского района. 
 Карта дает наглядное представление об уникальных архитектурных объектах, местах, связанных с известными людьми.    
-_Разработка идет на ветке ```develop```, для удобства она сделана дефолтной. В ```main``` сливается после прохождения контрольной точки или после выпуска стабильной версии, законченной на данном этапе._
+_Разработка идет на ветке ```develop```, для удобства она сделана дефолтной. В ```main``` сливается после прохождения 
+контрольной точки или после выпуска стабильной версии, законченной на данном этапе._    
+_В папке ```www``` - исходный код сайта_
+### Стек:
+- **Front-end**: HTML5, CSS3, JS (ES8), Node.JS, jQuery; Modernizr, Normalize.css    
+- **Back-end**: Apache Server Configs    
 ## ТЗ
 **Задача:** собрать информацию об исторически значимых объектах Суджанского района и обеспечить удобный доступ к данному 
 контенту через QR-коды, размещенные на объектах.    
