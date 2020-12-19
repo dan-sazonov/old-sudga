@@ -14,5 +14,6 @@
     "email": "p-294803@yandex.ru",
     "url": "https://github.com/dan-sazonov"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
