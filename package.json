@@ -2,12 +2,6 @@
   "name": "old-sudga",
   "version": "1.0.0",
   "description": "Unstable version of site",
-  "scripts": {
-    "build": "parcel build index.html",
-    "dev": "parcel serve index.html --open firefox",
-    "start": "npm run build && npm run dev",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": {
     "name": "Dan Sazonov",
     "email": "p-294803@yandex.ru",
