@@ -344,13 +344,13 @@ AddDefaultCharset utf-8
 # </IfModule>
 
 # ----------------------------------------------------------------------
-# | Suppressing the `src.` at the beginning of URLs                    |
+# | Suppressing the `www.` at the beginning of URLs                    |
 # ----------------------------------------------------------------------
 
-# Rewrite src.example.com → example.com
+# Rewrite www.example.com → example.com
 
 # The same content should never be available under two different URLs,
-# especially not with and without `src.` at the beginning.
+# especially not with and without `www.` at the beginning.
 # This can cause SEO problems (duplicate content), and therefore, you should
 # choose one of the alternatives and redirect the other one.
 #
@@ -385,13 +385,13 @@ AddDefaultCharset utf-8
 </IfModule>
 
 # ----------------------------------------------------------------------
-# | Forcing the `src.` at the beginning of URLs                        |
+# | Forcing the `www.` at the beginning of URLs                        |
 # ----------------------------------------------------------------------
 
-# Rewrite example.com → src.example.com
+# Rewrite example.com → www.example.com
 
 # The same content should never be available under two different URLs,
-# especially not with and without `src.` at the beginning.
+# especially not with and without `www.` at the beginning.
 # This can cause SEO problems (duplicate content), and therefore, you should
 # choose one of the alternatives and redirect the other one.
 #
@@ -423,10 +423,10 @@ AddDefaultCharset utf-8
 #     # (2)
 #     # RewriteCond %{HTTPS} !=on
 
-#     RewriteCond %{HTTP_HOST} !^src\. [NC]
+#     RewriteCond %{HTTP_HOST} !^www\. [NC]
 #     RewriteCond %{SERVER_ADDR} !=127.0.0.1
 #     RewriteCond %{SERVER_ADDR} !=::1
-#     RewriteRule ^ %{ENV:PROTO}://src.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+#     RewriteRule ^ %{ENV:PROTO}://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
 # </IfModule>
 
