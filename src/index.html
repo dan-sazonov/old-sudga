@@ -9,15 +9,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link type="text/plain" rel="author" href="/humans.txt">
 
-<!--  todo прописать мета -->
+  <!--  todo прописать мета -->
   <meta property="og:title" content="">
   <meta property="og:type" content="">
   <meta property="og:url" content="">
   <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
-  <!-- todo иконки, стилизовать строку браузера -->
+  <link rel="apple-touch-icon" href="ico/icon.png">
+  <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
+  <!-- todo иконки, стилизовать строку браузера, в отдельный файл -->
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
@@ -26,11 +27,17 @@
 </head>
 
 <body>
+@@include('_header.html')
 
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+<main>
+  <p>Main</p>
+  <img src="ico/tile.png" alt="lol">
+  <img src="img/test.webp" alt="kek">
+</main>
 
-  <script src="js/plugins.js"></script>
-  <script src="js/main.js"></script>
+@@include('_footer.html')
+<script src="js/plugins.js"></script>
+<script src="js/main.js"></script>
 </body>
 
 </html>
