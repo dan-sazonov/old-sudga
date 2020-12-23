@@ -44,7 +44,8 @@ function browser_sync() {
     server: {
       baseDir: './' + projectFolder + '/'
     },
-    port: 3000
+    port: 3000,
+    browser: 'firefox'
   });
 }
 
