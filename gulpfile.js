@@ -1,5 +1,5 @@
 const projectFolder = 'dist';
-const sourceFolder = 'src'; // будешь менять - чекни src в функции files
+const sourceFolder = 'src';
 const path = {
   build: {
     html: projectFolder + '/',
@@ -58,8 +58,8 @@ function html() {
 }
 
 function files() {
-  return src(['src/.htaccess', 'src/browserconfig.xml', 'src/humans.txt', 'src/robots.txt', 'src/site.webmanifest',
-    'src/LICENSE'])
+  return src([sourceFolder + '/.htaccess', sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
+    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE'])
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
 }
