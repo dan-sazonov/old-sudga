@@ -9,7 +9,7 @@ const path = {
   },
   src: {
     html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
-    css: sourceFolder + '/scss/**/*.scss',
+    css: sourceFolder + '/scss/styles.scss',
     js: sourceFolder + '/js/**/*.js',
     img: sourceFolder + '/**/*.{jpg,png,svg,gif,ico,webp}',
   },
@@ -90,7 +90,8 @@ function js() {
 }
 
 function bootstrapJs() {
-  return src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js', 'node_modules/popper.js/dist/umd/popper.min.js'])
+  return src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/popper.js/dist/umd/popper.min.js'])
     .pipe(dest(path.build.js))
     .pipe(browserSync.stream());
 }
@@ -121,7 +122,7 @@ function watchFiles() {
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
-  gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss',]);
+  gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss'], css);
 }
 
 function clean() {
