@@ -5,12 +5,15 @@
 ## О проекте
 Сайт для систематизации информации об исторически значимых местах Суджанского района.
 Карта дает наглядное представление об уникальных архитектурных объектах, местах, связанных с известными людьми.
-Для рассылки актуальной информации и общения с аудиторией создан бот в телеграм - @old_sudga_bot ([dan-sazonov/old-sudga-bot](https://github.com/dan-sazonov/old-sudga-bot)).
+Для рассылки актуальной информации и общения с аудиторией создан бот в телеграм -
+@old_sudga_bot ([dan-sazonov/old-sudga-bot](https://github.com/dan-sazonov/old-sudga-bot)).
 _Разработка идет на ветке `develop`, для удобства она сделана дефолтной. В `main` сливается после прохождения
 контрольной точки или после выпуска стабильной версии, законченной на данном этапе._
 ### Стек:
-- **Front-end**: HTML5, Sass/CSS3, JS (ES8), Node.JS, jQuery, Gulp 4, Bootstrap 4
-- **Back-end**: Apache Server Configs
+- **Front-end**: HTML5, [Sass](https://github.com/sass/sass) /CSS3, JS (ES8), [Node.JS](https://github.com/nodejs/node),
+ [jQuery](https://github.com/jquery/jquery), [Gulp 4](https://github.com/gulpjs/gulp),
+  [Bootstrap 4](https://github.com/twbs/bootstrap)
+- **Back-end**: [Apache Server Configs](https://github.com/h5bp/server-configs-apache)
 ### Gulp tasks:
 - `run`, default - собирает проект, запускает отслеживание изменений, поднимает сервер на localhost, открывает его из Firefox DE
 - `build` - собирает проект в директорию `dist`
