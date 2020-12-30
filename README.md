@@ -9,7 +9,7 @@
 _Разработка идет на ветке `develop`, для удобства она сделана дефолтной. В `main` сливается после прохождения
 контрольной точки или после выпуска стабильной версии, законченной на данном этапе._
 ### Стек:
-- **Front-end**: HTML5, CSS3, JS (ES8), Node.JS, jQuery, Gulp 4
+- **Front-end**: HTML5, Sass/CSS3, JS (ES8), Node.JS, jQuery, Gulp 4, Bootstrap 4
 - **Back-end**: Apache Server Configs
 ### Gulp tasks:
 - `run`, default - собирает проект, запускает отслеживание изменений, поднимает сервер на localhost, открывает его из Firefox DE
