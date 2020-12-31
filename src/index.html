@@ -2,29 +2,9 @@
 <html class="no-js" lang="ru">
 
 <head>
-  <meta charset="utf-8">
   <title>Давняя Суджа</title>
-  <!--  todo придумать описание -->
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link type="text/plain" rel="author" href="/humans.txt">
-
-  <!--  todo прописать мета -->
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="ico/icon.png">
-  <link type="image/x-icon" rel="shortcut icon" href="/favicon.ico">
-  <!-- todo иконки, стилизовать строку браузера, в отдельный файл -->
-
-  <script src="https://use.fontawesome.com/573687f7de.js"></script>
-  <link rel="stylesheet" href="/css/bootstrap.css"> <!-- файлы подключатся после сборки галпом -->
-  <link rel="stylesheet" href="/css/styles.css"> <!-- файлы подключатся после сборки галпом -->
-
-  <meta name="theme-color" content="#fafafa">
+  @@include('_head-com.html') <!-- иконки, настройки браузера (общие) -->
+  @@include('_seo.html') <!-- уникальные для каждой стр сео настройки -->
 </head>
 
 <body>
@@ -37,12 +17,7 @@
 </main>
 
 @@include('_footer.html')
-<script src="/js/modernizr.min.js"></script>
-<script src="/js/jquery.min.js"> </script> <!-- файлы подключатся после сборки галпом -->
-<script src="/js/popper.min.js"> </script> <!-- файлы подключатся после сборки галпом -->
-<script src="/js/bootstrap.min.js"> </script> <!-- файлы подключатся после сборки галпом -->
-<script src="/js/plugins.js"></script>
-<script src="/js/main.js"></script>
+@@include('_tail-com.html') <!-- скрипты -->
 </body>
 
 </html>
