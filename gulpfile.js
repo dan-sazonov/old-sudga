@@ -8,7 +8,7 @@ const path = {
     img: projectFolder + '/',
   },
   src: {
-    html: [sourceFolder + '/*.html', '!' + sourceFolder + '/_*.html'],
+    html: [sourceFolder + '/**/*.html', '!' + sourceFolder + '/components/_*.html'],
     css: sourceFolder + '/scss/styles.scss',
     js: sourceFolder + '/js/**/*.js',
     img: sourceFolder + '/**/*.{jpg,png,svg,gif,ico,webp}',
