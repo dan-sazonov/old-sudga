@@ -123,6 +123,8 @@ function watchFiles() {
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
   gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss'], css);
+  gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js',
+    'node_modules/popper.js/dist/umd/popper.min.js'], js);
 }
 
 function clean() {
