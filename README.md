@@ -1,6 +1,8 @@
 # Давняя Суджа
-![GitHub](https://img.shields.io/github/license/dan-sazonov/old-sudga)
+[![GitHub](https://img.shields.io/github/license/dan-sazonov/old-sudga)](https://github.com/dan-sazonov/old-sudga/blob/develop/LICENSE)
 ![OpenSource](https://img.shields.io/badge/Open%20Source-%E2%99%A5-red)
+[![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
+
 > The project is being developed in Russian. Translation into other languages is not planned for the foreseeable future.
 ## О проекте
 Сайт для систематизации информации об исторически значимых местах Суджанского района.
