@@ -5,21 +5,24 @@ const path = {
     html: projectFolder + '/',
     css: projectFolder + '/css/',
     js: projectFolder + '/js/',
-    img: projectFolder + '/',
+    ico: [projectFolder + '/ico/', projectFolder + '/'],
+    img: projectFolder + '/img/',
   },
   src: {
     html: [sourceFolder + '/**/*.html', '!' + sourceFolder + '/components/_*.html'],
     css: sourceFolder + '/scss/styles.scss',
     js: sourceFolder + '/js/**/*.js',
-    img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
+    ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
+    img: sourceFolder + '/img/*.+(png|jpg|gif|ico|svg|webp)',
   },
   watch: {
     html: sourceFolder + '/**/*.html',
     css: sourceFolder + '/scss/**/*.scss',
     js: sourceFolder + '/js/**/*.js',
+    ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
   },
-  clean: './' + projectFolder + '/'
+  clean: './' + projectFolder + '/',
 };
 
 // переменные плагинов
@@ -60,7 +63,7 @@ function html() {
 
 function files() {
   return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
-    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE'])
+    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1]])
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
 }
@@ -122,6 +125,12 @@ function images() {
     .pipe(browserSync.stream());
 }
 
+function icons() {
+  return src(path.src.ico[0])
+    .pipe(dest(path.build.ico[0]))
+    .pipe(browserSync.stream());
+}
+
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
@@ -143,7 +152,7 @@ function linter() {
 }
 
 // таски
-gulp.task('build', gulp.series(clean, gulp.parallel(js, npmImport, css, html, files, images)));
+gulp.task('build', gulp.series(clean, gulp.parallel(js, npmImport, css, html, files, images, icons)));
 gulp.task('test', gulp.series(linter, 'build'));
 gulp.task('watch', gulp.parallel('build', browser_sync));
 gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));
