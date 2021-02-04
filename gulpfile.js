@@ -59,7 +59,7 @@ function html() {
 }
 
 function files() {
-  return src([sourceFolder + '/.htaccess', sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
+  return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
     sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE'])
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
