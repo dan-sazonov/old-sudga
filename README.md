@@ -12,10 +12,9 @@
 _Разработка идет на ветке `develop`, для удобства она сделана дефолтной. В `main` сливается после прохождения
 контрольной точки или после выпуска стабильной версии, законченной на данном этапе._
 ### Стек:
-- **Front-end**: HTML5, [Sass](https://github.com/sass/sass) /CSS3, JS (ES8), [Node.JS](https://github.com/nodejs/node),
- [jQuery](https://github.com/jquery/jquery), [Gulp 4](https://github.com/gulpjs/gulp),
-  [Bootstrap 4](https://github.com/twbs/bootstrap)
-- **Back-end**: [Apache Server Configs](https://github.com/h5bp/server-configs-apache)
+- **Front-end**: HTML5, [Scss](https://github.com/sass/sass) /CSS3, JS (ES8), [jQuery](https://github.com/jquery/jquery),
+[Gulp 4](https://github.com/gulpjs/gulp), [Bootstrap 4](https://github.com/twbs/bootstrap)
+- **Back-end**: [Django](https://github.com/django/django), [Nginx](https://hg.nginx.org/nginx)
 ### Gulp tasks:
 - `run`, default - собирает проект, запускает отслеживание изменений, поднимает сервер на localhost, открывает его из Firefox DE
 - `build` - собирает проект в директорию `dist`
