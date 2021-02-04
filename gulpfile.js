@@ -11,13 +11,13 @@ const path = {
     html: [sourceFolder + '/**/*.html', '!' + sourceFolder + '/components/_*.html'],
     css: sourceFolder + '/scss/styles.scss',
     js: sourceFolder + '/js/**/*.js',
-    img: sourceFolder + '/**/*.{jpg,png,svg,gif,ico,webp}',
+    img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
   },
   watch: {
     html: sourceFolder + '/**/*.html',
     css: sourceFolder + '/scss/**/*.scss',
     js: sourceFolder + '/js/**/*.js',
-    img: sourceFolder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
+    img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
   },
   clean: './' + projectFolder + '/'
 };
@@ -89,7 +89,7 @@ function js() {
     .pipe(browserSync.stream());
 }
 
-function bootstrapJs() {
+function npmImport() {
   return src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js',
     'node_modules/popper.js/dist/umd/popper.min.js'])
     .pipe(dest(path.build.js))
@@ -98,19 +98,24 @@ function bootstrapJs() {
 
 function images() {
   return src(path.src.img)
+    .pipe(imagemin([
+      imagemin.gifsicle({ interlaced: true }),
+      imagemin.mozjpeg({
+        quality: 70,
+        progressive: true
+      }),
+      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.svgo({
+        plugins: [
+          { removeViewBox: true },
+          { cleanupIDs: false }
+        ]
+      })
+    ]))
+    .pipe(dest(path.build.img))
     .pipe(
       webp({
-        quality: 80
-      })
-    )
-    .pipe(dest(path.build.img))
-    .pipe(src(path.src.img))
-    .pipe(
-      imagemin({
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}],
-        interlaced: true,
-        optimizationLevel: 4
+        quality: 70
       })
     )
     .pipe(dest(path.build.img))
@@ -138,7 +143,7 @@ function linter() {
 }
 
 // таски
-gulp.task('build', gulp.series(clean, gulp.parallel(js, bootstrapJs, css, html, files, images)));
+gulp.task('build', gulp.series(clean, gulp.parallel(js, npmImport, css, html, files, images)));
 gulp.task('test', gulp.series(linter, 'build'));
 gulp.task('watch', gulp.parallel('build', browser_sync));
 gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));
