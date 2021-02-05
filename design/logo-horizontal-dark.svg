@@ -18,7 +18,7 @@
     <rect id="Фон" class="cls-1" width="273" height="91"/>
     <rect id="Прямоугольник_3" data-name="Прямоугольник 3" class="cls-2" x="63" y="66" width="2" height="25"/>
     <rect id="Прямоугольник_10" data-name="Прямоугольник 10" class="cls-2" x="7" y="82" width="51" height="2"/>
-    <rect id="Прямоугольник_8" data-name="Прямоугольник 8" class="cls-2" x="2" y="89" width="61" height="2"/>
+    <rect id="Прямоугольник_8" data-name="Прямоугольник 8" class="cls-2" y="89" width="65" height="2"/>
     <rect id="Прямоугольник_1" data-name="Прямоугольник 1" class="cls-2" y="66" width="2" height="25"/>
     <rect id="Прямоугольник_12" data-name="Прямоугольник 12" class="cls-2" x="7" y="74" width="51" height="2"/>
     <rect id="Прямоугольник_11" data-name="Прямоугольник 11" class="cls-2" x="7" y="78" width="51" height="2"/>
@@ -27,7 +27,7 @@
     <rect id="Прямоугольник_4" data-name="Прямоугольник 4" class="cls-2" x="7" y="15" width="51" height="2"/>
     <rect id="Прямоугольник_4-2" data-name="Прямоугольник 4" class="cls-2" x="7" y="7" width="51" height="2"/>
     <rect id="Прямоугольник_4-3" data-name="Прямоугольник 4" class="cls-2" x="7" y="11" width="51" height="2"/>
-    <rect id="Прямоугольник_3-2" data-name="Прямоугольник 3" class="cls-2" x="63" y="2" width="2" height="23"/>
+    <rect id="Прямоугольник_3-2" data-name="Прямоугольник 3" class="cls-2" x="63" width="2" height="25"/>
     <rect id="Прямоугольник_1-2" data-name="Прямоугольник 1" class="cls-2" width="2" height="25"/>
     <rect id="Прямоугольник_2" data-name="Прямоугольник 2" class="cls-2" width="65" height="2"/>
   </g>
