@@ -22,6 +22,11 @@ const path = {
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
   },
+  scripts: {
+    main: sourceFolder + '/js/main.js',
+    tmp: sourceFolder + '/js/tmp',
+    bundled: sourceFolder + '/js/tmp/main.js',
+  },
   clean: './' + projectFolder + '/',
 };
 
@@ -95,14 +100,14 @@ function js() {
 }
 
 function bundle() {
-  return browserify('src/js/main.js')
+  return browserify(path.scripts.main)
     .bundle()
     .pipe(source('main.js'))
-    .pipe(gulp.dest('src/js/tmp'));
+    .pipe(gulp.dest(path.scripts.tmp));
 }
 
 function bundleJs() {
-  return src('src/js/tmp/main.js')
+  return src(path.scripts.bundled)
     .pipe(babel())
     .pipe(fileInclude())
     .pipe(uglify)
