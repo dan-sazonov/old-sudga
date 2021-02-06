@@ -92,13 +92,6 @@ function js() {
     .pipe(browserSync.stream());
 }
 
-function npmImport() {
-  return src(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/popper.js/dist/umd/popper.min.js'])
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.stream());
-}
-
 function images() {
   return src(path.src.img)
     .pipe(imagemin([
@@ -152,7 +145,7 @@ function linter() {
 }
 
 // таски
-gulp.task('build', gulp.series(clean, gulp.parallel(js, npmImport, css, html, files, images, icons)));
+gulp.task('build', gulp.series(clean, gulp.parallel(js, css, html, files, images, icons)));
 gulp.task('test', gulp.series(linter, 'build'));
 gulp.task('watch', gulp.parallel('build', browser_sync));
 gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));
