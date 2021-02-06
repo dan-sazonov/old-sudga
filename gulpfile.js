@@ -69,7 +69,7 @@ function files() {
 }
 
 function css() {
-  return src(['node_modules/bootstrap/scss/bootstrap.scss', path.src.css])
+  return src(path.src.css)
     .pipe(sass())
     .pipe(groupMedia())
     .pipe(
@@ -95,16 +95,16 @@ function js() {
 function images() {
   return src(path.src.img)
     .pipe(imagemin([
-      imagemin.gifsicle({ interlaced: true }),
+      imagemin.gifsicle({interlaced: true}),
       imagemin.mozjpeg({
         quality: 70,
         progressive: true
       }),
-      imagemin.optipng({ optimizationLevel: 5 }),
+      imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo({
         plugins: [
-          { removeViewBox: true },
-          { cleanupIDs: false }
+          {removeViewBox: true},
+          {cleanupIDs: false}
         ]
       })
     ]))
@@ -129,9 +129,6 @@ function watchFiles() {
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
-  gulp.watch(['node_modules/bootstrap/scss/bootstrap.scss'], css);
-  gulp.watch(['node_modules/bootstrap/dist/js/bootstrap.min.js', 'node_modules/jquery/dist/jquery.min.js',
-    'node_modules/popper.js/dist/umd/popper.min.js'], js);
 }
 
 function clean() {
@@ -139,7 +136,7 @@ function clean() {
 }
 
 function linter() {
-  return src(sourceFolder + '/**/*.js',)
+  return src(path.watch.js)
     .pipe(eslint())
     .pipe(eslint.format());
 }
