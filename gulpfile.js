@@ -11,7 +11,7 @@ const path = {
   src: {
     html: [sourceFolder + '/**/*.html', '!' + sourceFolder + '/components/_*.html'],
     css: sourceFolder + '/scss/styles.scss',
-    js: sourceFolder + '/js/**/*.js',
+    js: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/tmp/*.js', '!' + sourceFolder + '/js/main.js'],
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/img/*.+(png|jpg|gif|ico|svg|webp)',
   },
@@ -41,6 +41,8 @@ const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
+const browserify = require('browserify');
+const source = require('vinyl-source-stream');
 
 // функции для тасков
 function browser_sync() {
@@ -85,6 +87,22 @@ function css() {
 
 function js() {
   return src(path.src.js)
+    .pipe(babel())
+    .pipe(fileInclude())
+    .pipe(uglify)
+    .pipe(dest(path.build.js))
+    .pipe(browserSync.stream());
+}
+
+function bundle() {
+  return browserify('src/js/main.js')
+    .bundle()
+    .pipe(source('main.js'))
+    .pipe(gulp.dest('src/js/tmp'));
+}
+
+function bundleJs() {
+  return src('src/js/tmp/main.js')
     .pipe(babel())
     .pipe(fileInclude())
     .pipe(uglify)
@@ -142,7 +160,7 @@ function linter() {
 }
 
 // таски
-gulp.task('build', gulp.series(clean, gulp.parallel(js, css, html, files, images, icons)));
+gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
 gulp.task('test', gulp.series(linter, 'build'));
 gulp.task('watch', gulp.parallel('build', browser_sync));
 gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));

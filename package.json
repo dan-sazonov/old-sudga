@@ -28,7 +28,8 @@
     "gulp-uglify-es": "^2.0.0",
     "gulp-webp": "^4.0.1",
     "gulp-webp-html": "^1.0.2",
-    "modernizr": "^3.11.4"
+    "modernizr": "^3.11.4",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
