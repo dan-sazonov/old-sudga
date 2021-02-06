@@ -1,5 +1,6 @@
 let foo = 'bar';
 const $ = require('jquery');
+const bootstrap = require('bootstrap');
 
 console.log(foo);
 $(document).ready(function(){
