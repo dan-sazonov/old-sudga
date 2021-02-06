@@ -18,7 +18,7 @@ const path = {
   watch: {
     html: sourceFolder + '/**/*.html',
     css: sourceFolder + '/scss/**/*.scss',
-    js: sourceFolder + '/js/**/*.js',
+    js: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/modernizr.min.js', '!' + sourceFolder + '/js/tmp/*.js'],
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
   },
