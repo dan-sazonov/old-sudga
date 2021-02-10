@@ -18,7 +18,6 @@ const path = {
   watch: {
     html: sourceFolder + '/**/*.html',
     css: sourceFolder + '/scss/**/*.scss',
-    js: sourceFolder + '/js/tmp/main.js',
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
   },
@@ -99,21 +98,21 @@ function js() {
     .pipe(browserSync.stream());
 }
 
-function bundle() {
-  return browserify(path.scripts.main)
-    .bundle()
-    .pipe(source('main.js'))
-    .pipe(gulp.dest(path.scripts.tmp));
-}
-
-function bundleJs() {
-  return src(path.scripts.bundled)
-    .pipe(babel())
-    .pipe(fileInclude())
-    .pipe(uglify)
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.stream());
-}
+// function bundle() {
+//   return browserify(path.scripts.main)
+//     .bundle()
+//     .pipe(source('main.js'))
+//     .pipe(gulp.dest(path.scripts.tmp));
+// }
+//
+// function bundleJs() {
+//   return src(path.scripts.bundled)
+//     .pipe(babel())
+//     .pipe(fileInclude())
+//     .pipe(uglify)
+//     .pipe(dest(path.build.js))
+//     .pipe(browserSync.stream());
+// }
 
 function images() {
   return src(path.src.img)
@@ -150,7 +149,6 @@ function icons() {
 function watchFiles() {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
-  gulp.watch([path.watch.js], js);
   gulp.watch([path.watch.img], images);
 }
 
@@ -165,7 +163,8 @@ function linter() {
 }
 
 // таски
-gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
+// gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
+gulp.task('build', gulp.series(clean, gulp.parallel(js, css, html, files, images, icons)));
 gulp.task('test', gulp.series(linter, 'build'));
 gulp.task('watch', gulp.parallel('build', browser_sync));
 gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));
