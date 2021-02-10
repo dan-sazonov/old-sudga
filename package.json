@@ -8,6 +8,12 @@
     "url": "https://github.com/dan-sazonov"
   },
   "license": "MIT",
+  "scripts": {
+    "build": "gulp build",
+    "run": "gulp",
+    "test": "gulp test",
+    "watch": "gulp watch"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
