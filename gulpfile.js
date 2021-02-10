@@ -45,31 +45,12 @@ const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
 
 // функции для тасков
-function browser_sync() {
-  browserSync.init({
-    server: {
-      baseDir: './' + projectFolder + '/'
-    },
-    port: 3000,
-    browser: 'firefox'
-  });
-}
-
 function html() {
   return src(path.src.html)
     .pipe(fileInclude())
     .pipe(webphtml())
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.stream());
-}
-
-function files() {
-  return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
-    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1]])
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
 }
@@ -88,30 +69,6 @@ function css() {
     .pipe(dest(path.build.css))
     .pipe(browserSync.stream());
 }
-
-function js() {
-  return src(path.src.js)
-    .pipe(babel())
-    .pipe(fileInclude())
-    .pipe(uglify)
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.stream());
-}
-
-function bundleFiles() {
-  return src(path.scripts.bundled)
-    .pipe(babel())
-    .pipe(fileInclude())
-    .pipe(uglify)
-    .pipe(dest(path.build.js));
-}
-
-function mapCopy() {
-  return src(path.scripts.bundleMap)
-    .pipe(dest(path.build.js));
-}
-
-
 
 function images() {
   return src(path.src.img)
@@ -139,34 +96,73 @@ function images() {
     .pipe(browserSync.stream());
 }
 
-function icons() {
+gulp.task('browser_sync', function () {
+  browserSync.init({
+    server: {
+      baseDir: './' + projectFolder + '/'
+    },
+    port: 3000,
+    browser: 'firefox'
+  });
+});
+
+gulp.task('js', function () {
+  return src(path.src.js)
+    .pipe(babel())
+    .pipe(fileInclude())
+    .pipe(uglify)
+    .pipe(dest(path.build.js))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('bundleFiles', function () {
+  return src(path.scripts.bundled)
+    .pipe(babel())
+    .pipe(fileInclude())
+    .pipe(uglify)
+    .pipe(dest(path.build.js));
+});
+
+gulp.task('mapCopy', function () {
+  return src(path.scripts.bundleMap)
+    .pipe(dest(path.build.js));
+});
+
+gulp.task('icons', function () {
   return src(path.src.ico[0])
     .pipe(dest(path.build.ico[0]))
     .pipe(browserSync.stream());
-}
+});
 
-function watchFiles() {
+gulp.task('files', function () {
+  return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
+    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1]])
+    .pipe(dest(path.build.html))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('watchFiles', function () {
   gulp.watch([path.watch.html], html);
   gulp.watch([path.watch.css], css);
   gulp.watch([path.watch.img], images);
-}
+});
 
-function clean() {
+gulp.task('clean', function () {
   return del(path.clean);
-}
+});
 
-function linter() {
+gulp.task('linter', function () {
   return src([sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/modernizr.min.js', '!' + sourceFolder + '/js/tmp/*.js'])
     .pipe(eslint())
     .pipe(eslint.format());
-}
+});
 
 // таски
 // gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
-gulp.task('build', gulp.parallel(js, css, html, files, images, icons));
-gulp.task('test', gulp.series(linter, 'build'));
-gulp.task('watch', gulp.parallel('build', browser_sync));
-gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));
+gulp.task('build', gulp.parallel('js', css, html, 'files', images, 'icons'));
+gulp.task('test', gulp.series('linter', 'build'));
+gulp.task('watch', gulp.parallel('build', 'browser_sync'));
+gulp.task('run', gulp.parallel('build', 'watchFiles', 'browser_sync'));
 gulp.task('default', gulp.parallel('run'));
-gulp.task('bundle', gulp.series(clean, bundleFiles, mapCopy));
+gulp.task('bundle', gulp.series('clean', 'bundleFiles', 'mapCopy'));
 // browserify src/js/main.js --debug | exorcist src/js/tmp/bundle.map.js > src/js/tmp/main.js
