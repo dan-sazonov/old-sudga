@@ -23,7 +23,7 @@ const path = {
   },
   scripts: {
     main: sourceFolder + '/js/main.js',
-    tmp: sourceFolder + '/js/tmp',
+    bundleMap: sourceFolder + '/js/tmp/main.map.js',
     bundled: sourceFolder + '/js/tmp/main.js',
   },
   clean: './' + projectFolder + '/',
@@ -98,21 +98,20 @@ function js() {
     .pipe(browserSync.stream());
 }
 
-// function bundle() {
-//   return browserify(path.scripts.main)
-//     .bundle()
-//     .pipe(source('main.js'))
-//     .pipe(gulp.dest(path.scripts.tmp));
-// }
-//
-// function bundleJs() {
-//   return src(path.scripts.bundled)
-//     .pipe(babel())
-//     .pipe(fileInclude())
-//     .pipe(uglify)
-//     .pipe(dest(path.build.js))
-//     .pipe(browserSync.stream());
-// }
+function bundleFiles() {
+  return src(path.scripts.bundled)
+    .pipe(babel())
+    .pipe(fileInclude())
+    .pipe(uglify)
+    .pipe(dest(path.build.js));
+}
+
+function mapCopy() {
+  return src(path.scripts.bundleMap)
+    .pipe(dest(path.build.js));
+}
+
+
 
 function images() {
   return src(path.src.img)
@@ -164,8 +163,10 @@ function linter() {
 
 // таски
 // gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
-gulp.task('build', gulp.series(clean, gulp.parallel(js, css, html, files, images, icons)));
+gulp.task('build', gulp.parallel(js, css, html, files, images, icons));
 gulp.task('test', gulp.series(linter, 'build'));
 gulp.task('watch', gulp.parallel('build', browser_sync));
 gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));
 gulp.task('default', gulp.parallel('run'));
+gulp.task('bundle', gulp.series(clean, bundleFiles, mapCopy));
+// browserify src/js/main.js --debug | exorcist src/js/tmp/bundle.map.js > src/js/tmp/main.js
