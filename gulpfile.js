@@ -11,23 +11,25 @@ const path = {
   src: {
     html: [sourceFolder + '/**/*.html', '!' + sourceFolder + '/components/_*.html'],
     css: sourceFolder + '/scss/styles.scss',
-    js: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/tmp/*.js', '!' + sourceFolder + '/js/main.js'],
+    js: ['src/js/tmp/main.js', 'src/js/modernizr.min.js', 'src/js/plugins.js'],
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/img/*.+(png|jpg|gif|ico|svg|webp)',
   },
   watch: {
     html: sourceFolder + '/**/*.html',
     css: sourceFolder + '/scss/**/*.scss',
-    js: sourceFolder + '/js/tmp/main.js',
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
+    js: sourceFolder + 'js/main.js',
   },
   scripts: {
     main: sourceFolder + '/js/main.js',
-    tmp: sourceFolder + '/js/tmp',
+    bundleMap: sourceFolder + '/js/tmp/main.map.js',
     bundled: sourceFolder + '/js/tmp/main.js',
+    bundledDist: projectFolder + 'js/main.js',
   },
   clean: './' + projectFolder + '/',
+  lint: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/**/*.min.js', '!' + sourceFolder + '/js/tmp/*.js'],
 };
 
 // переменные плагинов
@@ -46,31 +48,13 @@ const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
-const browserify = require('browserify');
-const source = require('vinyl-source-stream');
+const {exec} = require('child_process');
 
-// функции для тасков
-function browser_sync() {
-  browserSync.init({
-    server: {
-      baseDir: './' + projectFolder + '/'
-    },
-    port: 3000,
-    browser: 'firefox'
-  });
-}
 
 function html() {
   return src(path.src.html)
     .pipe(fileInclude())
     .pipe(webphtml())
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.stream());
-}
-
-function files() {
-  return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
-    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1]])
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
 }
@@ -87,31 +71,6 @@ function css() {
     )
     .pipe(cleanCSS())
     .pipe(dest(path.build.css))
-    .pipe(browserSync.stream());
-}
-
-function js() {
-  return src(path.src.js)
-    .pipe(babel())
-    .pipe(fileInclude())
-    .pipe(uglify)
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.stream());
-}
-
-function bundle() {
-  return browserify(path.scripts.main)
-    .bundle()
-    .pipe(source('main.js'))
-    .pipe(gulp.dest(path.scripts.tmp));
-}
-
-function bundleJs() {
-  return src(path.scripts.bundled)
-    .pipe(babel())
-    .pipe(fileInclude())
-    .pipe(uglify)
-    .pipe(dest(path.build.js))
     .pipe(browserSync.stream());
 }
 
@@ -141,32 +100,67 @@ function images() {
     .pipe(browserSync.stream());
 }
 
-function icons() {
+function manualUpdate(done) {
+  exec('npm run updateJS');
+  done();
+  return src(path.scripts.bundledDist).pipe(browserSync.stream());
+}
+
+gulp.task('browser_sync', function () {
+  browserSync.init({
+    server: {
+      baseDir: './' + projectFolder + '/'
+    },
+    port: 3000,
+    browser: 'firefox'
+  });
+});
+
+gulp.task('js', function () {
+  return src(path.src.js)
+    .pipe(babel())
+    .pipe(fileInclude())
+    .pipe(uglify)
+    .pipe(dest(path.build.js))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('mapCopy', function () {
+  return src(path.scripts.bundleMap)
+    .pipe(dest(path.build.js));
+});
+
+gulp.task('icons', function () {
   return src(path.src.ico[0])
     .pipe(dest(path.build.ico[0]))
     .pipe(browserSync.stream());
-}
+});
 
-function watchFiles() {
-  gulp.watch([path.watch.html], html);
-  gulp.watch([path.watch.css], css);
-  gulp.watch([path.watch.js], js);
-  gulp.watch([path.watch.img], images);
-}
+gulp.task('files', function () {
+  return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
+    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1]])
+    .pipe(dest(path.build.html))
+    .pipe(browserSync.stream());
+});
 
-function clean() {
+gulp.task('watchFiles', function () {
+  gulp.watch(path.watch.html, html);
+  gulp.watch(path.watch.css, css);
+  gulp.watch(path.watch.img, images);
+  gulp.watch(path.scripts.main, gulp.series(manualUpdate, html));
+});
+
+gulp.task('clean', function () {
   return del(path.clean);
-}
+});
 
-function linter() {
-  return src([sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/modernizr.min.js', '!' + sourceFolder + '/js/tmp/*.js'])
+gulp.task('linter', function () {
+  return src(path.lint)
     .pipe(eslint())
     .pipe(eslint.format());
-}
+});
 
-// таски
-gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
-gulp.task('test', gulp.series(linter, 'build'));
-gulp.task('watch', gulp.parallel('build', browser_sync));
-gulp.task('run', gulp.parallel('build', watchFiles, browser_sync));
-gulp.task('default', gulp.parallel('run'));
+
+gulp.task('build', gulp.series('clean', 'js', gulp.parallel('mapCopy', css, html, 'files', images, 'icons')));
+gulp.task('server', gulp.parallel('watchFiles', 'browser_sync'));
+gulp.task('default', gulp.parallel('build'));
