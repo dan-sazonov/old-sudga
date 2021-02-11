@@ -9,6 +9,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "create": "npm install && npm install --global watchify && npm install --global browserify",
     "build": "gulp clean && browserify src/js/main.js --debug | exorcist src/js/tmp/main.map.js > src/js/tmp/main.js && gulp build",
     "test": "gulp linter && npm run build",
     "dev": "npm run build && gulp server",
