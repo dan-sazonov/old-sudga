@@ -20,14 +20,16 @@ const path = {
     css: sourceFolder + '/scss/**/*.scss',
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
-    js: sourceFolder + 'js/main.js'
+    js: sourceFolder + 'js/main.js',
   },
   scripts: {
     main: sourceFolder + '/js/main.js',
     bundleMap: sourceFolder + '/js/tmp/main.map.js',
     bundled: sourceFolder + '/js/tmp/main.js',
+    bundledDist: projectFolder + 'js/main.js',
   },
   clean: './' + projectFolder + '/',
+  lint: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/**/*.min.js', '!' + sourceFolder + '/js/tmp/*.js'],
 };
 
 // переменные плагинов
@@ -101,7 +103,7 @@ function images() {
 function manualUpdate(done) {
   exec('npm run updateJS');
   done();
-  return src('dist/js/main.js').pipe(browserSync.stream());
+  return src(path.scripts.bundledDist).pipe(browserSync.stream());
 }
 
 gulp.task('browser_sync', function () {
@@ -142,10 +144,10 @@ gulp.task('files', function () {
 });
 
 gulp.task('watchFiles', function () {
-  gulp.watch('src/**/*.html', html);
-  gulp.watch('src/scss/**/*.scss', css);
-  gulp.watch('src/img/*.+(png|jpg|gif|ico|svg|webp)', images);
-  gulp.watch('src/js/main.js', gulp.series(manualUpdate, html));
+  gulp.watch(path.watch.html, html);
+  gulp.watch(path.watch.css, css);
+  gulp.watch(path.watch.img, images);
+  gulp.watch(path.scripts.main, gulp.series(manualUpdate, html));
 });
 
 gulp.task('clean', function () {
@@ -153,7 +155,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task('linter', function () {
-  return src([sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/**/*.min.js', '!' + sourceFolder + '/js/tmp/*.js'])
+  return src(path.lint)
     .pipe(eslint())
     .pipe(eslint.format());
 });
