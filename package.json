@@ -14,7 +14,6 @@
     "test": "gulp linter && npm run build",
     "dev": "npm run build && gulp server",
     "updateJS": "browserify src/js/main.js --debug | exorcist src/js/tmp/main.map.js > src/js/tmp/main.js && gulp js"
-
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -38,8 +37,5 @@
     "gulp-webp-html": "^1.0.2",
     "modernizr": "^3.11.4",
     "vinyl-source-stream": "^2.0.0"
-  },
-  "dependencies": {
-    "ramda": "^0.27.1"
   }
 }
