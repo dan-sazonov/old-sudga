@@ -49,7 +49,6 @@ const sass = require('gulp-sass');
 const {exec} = require('child_process');
 
 
-// функции для тасков
 function html() {
   return src(path.src.html)
     .pipe(fileInclude())
@@ -99,6 +98,12 @@ function images() {
     .pipe(browserSync.stream());
 }
 
+function manualUpdate(done) {
+  exec('npm run updateJS');
+  done();
+  return src('dist/js/main.js').pipe(browserSync.stream());
+}
+
 gulp.task('browser_sync', function () {
   browserSync.init({
     server: {
@@ -111,7 +116,6 @@ gulp.task('browser_sync', function () {
 
 gulp.task('js', function () {
   return src(path.src.js)
-    // return src(['src/js/tmp/main.js', 'src/js/**/*.js', '!src/js/tmp/*.js', '!src/js/main.js'])
     .pipe(babel())
     .pipe(fileInclude())
     .pipe(uglify)
@@ -137,12 +141,6 @@ gulp.task('files', function () {
     .pipe(browserSync.stream());
 });
 
-function manualUpdate(done){
-  exec('npm run updateJS');
-  done();
-  return src('dist/js/main.js').pipe(browserSync.stream());
-}
-
 gulp.task('watchFiles', function () {
   gulp.watch('src/**/*.html', html);
   gulp.watch('src/scss/**/*.scss', css);
@@ -160,13 +158,7 @@ gulp.task('linter', function () {
     .pipe(eslint.format());
 });
 
-// таски
-// gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
+
 gulp.task('build', gulp.series('clean', 'js', gulp.parallel('mapCopy', css, html, 'files', images, 'icons')));
-// gulp.task('test', gulp.series('linter', 'build'));
-// gulp.task('watch', gulp.parallel('build', 'browser_sync'));
 gulp.task('server', gulp.parallel('watchFiles', 'browser_sync'));
 gulp.task('default', gulp.parallel('build'));
-// gulp.task('bundle', gulp.series('clean', 'bundleFiles', 'mapCopy'));
-// browserify src/js/main.js --debug | exorcist src/js/tmp/bundle.map.js > src/js/tmp/main.js
-// gulp.task('f', gulp.parallel(manualUpdate));
