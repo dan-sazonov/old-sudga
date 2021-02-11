@@ -20,6 +20,7 @@ const path = {
     css: sourceFolder + '/scss/**/*.scss',
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
+    js: sourceFolder + 'js/main.js'
   },
   scripts: {
     main: sourceFolder + '/js/main.js',
@@ -45,6 +46,8 @@ const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
+const {exec} = require('child_process');
+
 
 // функции для тасков
 function html() {
@@ -108,11 +111,12 @@ gulp.task('browser_sync', function () {
 
 gulp.task('js', function () {
   return src(path.src.js)
-  // return src(['src/js/tmp/main.js', 'src/js/**/*.js', '!src/js/tmp/*.js', '!src/js/main.js'])
+    // return src(['src/js/tmp/main.js', 'src/js/**/*.js', '!src/js/tmp/*.js', '!src/js/main.js'])
     .pipe(babel())
     .pipe(fileInclude())
     .pipe(uglify)
-    .pipe(dest(path.build.js));
+    .pipe(dest(path.build.js))
+    .pipe(browserSync.stream());
 });
 
 gulp.task('mapCopy', function () {
@@ -133,11 +137,17 @@ gulp.task('files', function () {
     .pipe(browserSync.stream());
 });
 
+function manualUpdate(done){
+  exec('npm run updateJS');
+  done();
+  return src('dist/js/main.js').pipe(browserSync.stream());
+}
+
 gulp.task('watchFiles', function () {
   gulp.watch('src/**/*.html', html);
   gulp.watch('src/scss/**/*.scss', css);
   gulp.watch('src/img/*.+(png|jpg|gif|ico|svg|webp)', images);
-  // todo gulp.watch('src/js/main,js', npm update)
+  gulp.watch('src/js/main.js', gulp.series(manualUpdate, html));
 });
 
 gulp.task('clean', function () {
@@ -152,10 +162,11 @@ gulp.task('linter', function () {
 
 // таски
 // gulp.task('build', gulp.series(clean, bundle, gulp.parallel(bundleJs, js, css, html, files, images, icons)));
-gulp.task('build', gulp.series('clean', 'js',  gulp.parallel('mapCopy', css, html, 'files', images, 'icons')));
+gulp.task('build', gulp.series('clean', 'js', gulp.parallel('mapCopy', css, html, 'files', images, 'icons')));
 // gulp.task('test', gulp.series('linter', 'build'));
 // gulp.task('watch', gulp.parallel('build', 'browser_sync'));
 gulp.task('server', gulp.parallel('watchFiles', 'browser_sync'));
 gulp.task('default', gulp.parallel('build'));
 // gulp.task('bundle', gulp.series('clean', 'bundleFiles', 'mapCopy'));
 // browserify src/js/main.js --debug | exorcist src/js/tmp/bundle.map.js > src/js/tmp/main.js
+// gulp.task('f', gulp.parallel(manualUpdate));
