@@ -9,10 +9,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "gulp build",
-    "run": "gulp",
-    "test": "gulp test",
-    "watch": "gulp watch"
+    "build": "gulp clean && browserify src/js/main.js --debug | exorcist src/js/tmp/main.map.js > src/js/tmp/main.js && gulp build",
+    "test": "gulp linter && npm run build",
+    "dev": "npm run build && gulp server"
+
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
