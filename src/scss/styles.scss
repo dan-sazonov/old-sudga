@@ -1,3 +1,15 @@
 @import "normalize"; // нормализует стили браузера
 @import "main"; // дефолтные стили Boilerplate
 @import "variables"; // глобальные переменные
+
+.outdated {
+  text-align: center;
+  font-weight: bold;
+  color: #dc3545;
+}
+
+.outdated-line {
+  color: #dc3545;
+  background-color: #dc3545;
+  height: 5px;
+}
