@@ -5,11 +5,11 @@
 .outdated {
   text-align: center;
   font-weight: bold;
-  color: #dc3545;
+  color: $err-red;
 }
 
 .outdated-line {
-  color: #dc3545;
-  background-color: #dc3545;
+  color: $err-red;
+  background-color: $err-red;
   height: 5px;
 }
