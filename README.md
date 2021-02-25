@@ -51,19 +51,26 @@ _Разработка идет на ветке `develop`, для удобств�
 ## Идеи
 - Идеи по коненту в отдельном [таске](https://github.com/dan-sazonov/old-sudga/projects/1#card-55367718)
 ### Страницы сайта
-- Главная
-- Статья (темплейт)
-- Галерея
-- Все статьи
-- О нас
-- Участвовать в развитии проекта
-- Использование наших материалов
-- FAQ(?)
-- Страница 404
-- Страница для других ошибок
-- Лицензия (файл)
-- Пользовательское соглашение (файл)
-- Политика конфиденциальности (файл)
+:white_large_square: - ожидается;<br>
+:black_square_button: - в процессе; <br>
+:white_check_mark: - сделано; <br>
+:x: - проблема.
+
+| Страница | Дизайн | Верстка | Тесты |
+|:--------:|:------:|:-------:|:-----:|
+| Главная | :black_square_button: | :white_large_square: | :white_large_square: |
+| Статья (темплейт) | :white_check_mark: | :white_large_square: | :white_large_square: |
+| Галерея | :black_square_button: | :white_large_square: | :white_large_square: |
+| Все статьи | :black_square_button: | :white_large_square: | :white_large_square: |
+| О нас | :black_square_button: | :white_large_square: | :white_large_square: |
+| Участвовать в развитии проекта | :white_check_mark: | :white_large_square: | :white_large_square: |
+| Использование наших материалов | :white_check_mark: | :white_large_square: | :white_large_square: |
+| FAQ(?) | :white_large_square: | :white_large_square: | :white_large_square: |
+| Страница 404 | :white_check_mark: | :white_large_square: | :white_large_square: |
+| Страница для других ошибок | :white_check_mark: | :white_large_square: | :white_large_square: |
+| Лицензия (файл) | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+| Пользовательское соглашение (файл) | :white_large_square: | :white_large_square: | :white_large_square: |
+| Политика конфиденциальности (файл) | :white_large_square: | :white_large_square: | :white_large_square: |
 
 ## Хотите сотрудничать?
 Coming soon!
