@@ -62,7 +62,7 @@ _Разработка идет на ветке `develop`, для удобств�
 | Статья (темплейт) | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Галерея | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Все статьи | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
-| О нас | :x: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
+| О нас | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Участвовать в развитии проекта | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Использование наших материалов | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | FAQ(?) | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
