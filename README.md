@@ -58,10 +58,10 @@ _Разработка идет на ветке `develop`, для удобств�
 
 | Страница | Дизайн | mobile | mobile<br>landscape | desktop | Тесты |
 |:--------|:------:|:-------:|:-----:|:-------:|:-----:|
-| Главная | :x: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
+| Главная | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Статья (темплейт) | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Галерея | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
-| Все статьи | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
+| Все статьи | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | О нас | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Участвовать в развитии проекта | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Использование наших материалов | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
