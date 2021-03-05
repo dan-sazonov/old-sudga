@@ -9,11 +9,8 @@
   },
   "license": "MIT",
   "scripts": {
-    "create": "npm install && npm install --global watchify && npm install --global browserify",
-    "build": "gulp clean && browserify src/js/main.js --debug | exorcist src/js/tmp/main.map.js > src/js/tmp/main.js && gulp build",
-    "test": "gulp linter && npm run build",
-    "dev": "npm run build && gulp server",
-    "updateJS": "browserify src/js/main.js --debug | exorcist src/js/tmp/main.map.js > src/js/tmp/main.js && gulp js"
+    "build": "webpack -p",
+    "watch": "webpack --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -36,6 +33,7 @@
     "gulp-webp": "^4.0.1",
     "gulp-webp-html": "^1.0.2",
     "modernizr": "^3.11.4",
-    "vinyl-source-stream": "^2.0.0"
+    "vinyl-source-stream": "^2.0.0",
+    "webpack": "^5.24.3"
   }
 }
