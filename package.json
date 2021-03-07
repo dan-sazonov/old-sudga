@@ -1,7 +1,6 @@
 {
   "name": "old-sudga",
-  "version": "1.0.0",
-  "description": "Unstable version of site",
+  "private": true,
   "author": {
     "name": "Dan Sazonov",
     "email": "p-294803@yandex.ru",
