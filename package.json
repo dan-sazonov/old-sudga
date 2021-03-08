@@ -1,19 +1,25 @@
 {
   "name": "old-sudga",
   "private": true,
+  "main": "src/app.js",
   "author": {
     "name": "Dan Sazonov",
     "email": "p-294803@yandex.ru",
     "url": "https://github.com/dan-sazonov"
   },
   "license": "MIT",
+  "repository": "github:dan-sazonov/old-sudga",
   "scripts": {
-    "build": "webpack -p",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
     "watch": "webpack --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.26.13",
     "browserify": "^17.0.0",
     "del": "^6.0.0",
@@ -33,6 +39,7 @@
     "gulp-webp-html": "^1.0.2",
     "modernizr": "^3.11.4",
     "vinyl-source-stream": "^2.0.0",
-    "webpack": "^5.24.3"
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
   }
 }
