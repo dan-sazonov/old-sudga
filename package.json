@@ -18,6 +18,10 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "bootstrap": "^4.6.0",
     "browser-sync": "^2.26.13",
     "browserify": "^17.0.0",
     "del": "^6.0.0",
@@ -35,7 +39,11 @@
     "gulp-uglify-es": "^2.0.0",
     "gulp-webp": "^4.0.1",
     "gulp-webp-html": "^1.0.2",
+    "jquery": "^3.6.0",
     "modernizr": "^3.11.4",
-    "vinyl-source-stream": "^2.0.0"
+    "popper": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
   }
 }
