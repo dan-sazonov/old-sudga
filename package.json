@@ -1,6 +1,7 @@
 {
   "name": "old-sudga",
   "private": true,
+  "homepage": "https://давняя-сужда.рус",
   "main": "src/app.js",
   "author": {
     "name": "Dan Sazonov",
@@ -8,7 +9,13 @@
     "url": "https://github.com/dan-sazonov"
   },
   "license": "MIT",
-  "repository": "github:dan-sazonov/old-sudga",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dan-sazonov/old-sudga.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dan-sazonov/old-sudga/issues"
+  },
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
@@ -46,6 +53,7 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
-    "popper": "^1.0.1"
+    "popper": "^1.0.1",
+    "popper.js": "^1.16.1"
   }
 }
