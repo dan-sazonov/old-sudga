@@ -63,7 +63,7 @@ _Разработка идет на ветке `develop`, для удобств�
 | Галерея | :white_check_mark: | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Все статьи | :white_check_mark: | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | О нас | :white_check_mark: | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
-| Участвовать в развитии проекта | :white_check_mark: | :black_square_button: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
+| Участвовать в развитии проекта | :white_check_mark: | :white_check_mark:  | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Использование наших материалов | :white_check_mark: | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Страница 404 | :white_check_mark: | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
 | Страница для других ошибок | :white_check_mark: | :white_check_mark: | :white_large_square: | :white_large_square: | :white_large_square: | :white_large_square: |
