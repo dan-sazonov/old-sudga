@@ -1,0 +1,51 @@
+{
+  "name": "old-sudga",
+  "version": "1.0.0",
+  "description": "Unstable version of site",
+  "author": {
+    "name": "Dan Sazonov",
+    "email": "p-294803@yandex.ru",
+    "url": "https://github.com/dan-sazonov"
+  },
+  "license": "MIT",
+  "scripts": {
+    "create": "npm install && npm install --global watchify && npm install --global browserify",
+    "build": "gulp clean && browserify src/js/main.js --debug | exorcist src/js/tmp/main.map.js > src/js/tmp/main.js && gulp build",
+    "test": "gulp linter && npm run build",
+    "dev": "npm run build && gulp server",
+    "updateJS": "browserify src/js/main.js --debug | exorcist src/js/tmp/main.map.js > src/js/tmp/main.js && gulp js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.14",
+    "browserify": "^12.0.2",
+    "del": "^6.0.0",
+    "eslint": "^7.21.0",
+    "exorcist": "^2.0.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-file-include": "^2.3.0",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-webp": "^4.0.1",
+    "gulp-webp-html": "^1.0.2",
+    "modernizr": "^3.11.4",
+    "vinyl-source-stream": "^2.0.0",
+    "webpack": "^5.24.4",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "jquery": "^3.6.0",
+    "popper": "^1.0.1"
+  }
+}
