@@ -10,3 +10,6 @@ import Scrollspy from 'bootstrap/js/dist/scrollspy';
 import Tab from 'bootstrap/js/dist/tab';
 import Toast from 'bootstrap/js/dist/toast';
 import Tooltip from 'bootstrap/js/dist/tooltip';
+import main from './js/main';
+
+main();
