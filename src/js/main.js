@@ -1,4 +1,4 @@
-import $ from 'jquery/dist/jquery';
+import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
 import Alert from 'bootstrap/js/dist/alert';
 import Button from 'bootstrap/js/dist/button';
