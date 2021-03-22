@@ -16,9 +16,9 @@
     "url": "https://github.com/dan-sazonov/old-sudga/issues"
   },
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "watch": "webpack --mode production --watch"
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "watch": "cross-env NODE_ENV=production webpack --mode production --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
