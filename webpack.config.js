@@ -1,3 +1,4 @@
+const isDev = process.env.NODE_ENV === 'development';
 const path = require('path');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
@@ -26,6 +27,14 @@ module.exports = {
             plugins: ['@babel/plugin-proposal-class-properties']
           }
         }
+      },
+      {
+        test: /\.xml$/,
+        use: ['xml-loader']
+      },
+      {
+        test: /\.csv$/,
+        use: ['csv-loader']
       }
     ]
   }
