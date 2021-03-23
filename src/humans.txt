@@ -5,12 +5,11 @@
   Github: @dan-sazonov
 
 # THANKS
-
-    <name>
+    For these tutorials: https://youtu.be/eSaF8NXeNsA; https://youtu.be/stFOy0Noahg
 
 # SITE
 	Language: Russian
 	Doctype:HTML5
 	IDE: PhpStorm, Photoshop, Figma
-  Used technologies: HTML5, Sass/CSS3, JS (ES8), Node.JS, jQuery, Gulp 4, Bootstrap 4;
-                     Apache Server Configs, Modernizr, Normalize.css
+	Used technologies: HTML5, Sсss/CSS3, JS (ES8),  jQuery, Gulp 4, webpack, Bootstrap 4;
+                       Modernizr, Normalize.css

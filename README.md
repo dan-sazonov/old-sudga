@@ -14,7 +14,8 @@ _Разработка идет на ветке `develop`, для удобств�
 контрольной точки или после выпуска стабильной версии, законченной на данном этапе._
 ### Стек:
 - **Front-end**: HTML5, [Scss](https://github.com/sass/sass) /CSS3, JS (ES8), [jQuery](https://github.com/jquery/jquery),
-[Gulp 4](https://github.com/gulpjs/gulp), [Bootstrap 4](https://github.com/twbs/bootstrap)
+[Gulp 4](https://github.com/gulpjs/gulp), [webpack](https://github.com/webpack/webpack),
+[Bootstrap 4](https://github.com/twbs/bootstrap)
 - **Back-end**: [Django](https://github.com/django/django)
 
 ## ТЗ
@@ -73,7 +74,8 @@ _Разработка идет на ветке `develop`, для удобств�
 [ишью](https://github.com/dan-sazonov/old-sudga/issues). 
 Вы можете взять ишью, и сказать мне, что работаете над ним.<br>
 Если вы хотите предложить свое решение, сделайте 
-[pull request](https://github.com/dan-sazonov/old-sudga/pulls).
+[pull request](https://github.com/dan-sazonov/old-sudga/pulls).<br>
+Пожалуйста, пишите комментарии к коммитам и названия пулл-реквестов и ишью на английском языке.
 ### Сборка
 - `npm run dev` - сборка проекта в режиме разработки и запуск локального сервера
 - `npm run build` - сборка для деплоя
