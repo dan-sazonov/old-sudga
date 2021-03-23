@@ -14,6 +14,7 @@ const path = {
     js: ['src/js/tmp/main.js', 'src/js/modernizr.min.js', 'src/js/plugins.js'],
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/img/*.+(png|jpg|gif|ico|svg|webp)',
+    fonts: sourceFolder + '/**/*.+(ttf|otf|woff|eot)',
   },
   watch: {
     html: sourceFolder + '/**/*.html',
@@ -126,7 +127,7 @@ gulp.task('icons', function () {
 gulp.task('files', function () {
   return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
     sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1],
-    path.scripts.modernizr])
+    path.src.fonts])
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
 });
