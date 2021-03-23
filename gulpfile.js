@@ -14,6 +14,7 @@ const path = {
     js: ['src/js/tmp/main.js', 'src/js/modernizr.min.js', 'src/js/plugins.js'],
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/img/*.+(png|jpg|gif|ico|svg|webp)',
+    fonts: sourceFolder + '/**/*.+(ttf|otf|woff|eot)',
   },
   watch: {
     html: sourceFolder + '/**/*.html',
@@ -24,12 +25,10 @@ const path = {
   },
   scripts: {
     main: sourceFolder + '/js/main.js',
-    bundleMap: sourceFolder + '/js/tmp/main.map.js',
-    bundled: sourceFolder + '/js/tmp/main.js',
-    bundledDist: projectFolder + 'js/main.js',
+    modernizr: sourceFolder + '/js/modernizr.min.js',
   },
   clean: './' + projectFolder + '/',
-  lint: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/**/*.min.js', '!' + sourceFolder + '/js/tmp/*.js'],
+  lint: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/**/*.min.js'],
 };
 
 // переменные плагинов
@@ -41,15 +40,12 @@ const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const groupMedia = require('gulp-group-css-media-queries');
 const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify-es').default();
-const babel = require('gulp-babel');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
 const {exec} = require('child_process');
-
 
 function html() {
   return src(path.src.html)
@@ -100,10 +96,10 @@ function images() {
     .pipe(browserSync.stream());
 }
 
-function manualUpdate(done) {
-  exec('npm run updateJS');
+function js(done) {
+  exec('npm run webpack-dev');
   done();
-  return src(path.scripts.bundledDist).pipe(browserSync.stream());
+  return src('./').pipe(browserSync.stream());
 }
 
 gulp.task('browser_sync', function () {
@@ -116,18 +112,10 @@ gulp.task('browser_sync', function () {
   });
 });
 
-gulp.task('js', function () {
-  return src(path.src.js)
-    .pipe(babel())
-    .pipe(fileInclude())
-    .pipe(uglify)
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.stream());
-});
-
-gulp.task('mapCopy', function () {
-  return src(path.scripts.bundleMap)
-    .pipe(dest(path.build.js));
+gulp.task('jsProd', function (done) {
+  exec('npm run webpack-build');
+  done();
+  return src('./').pipe(browserSync.stream());
 });
 
 gulp.task('icons', function () {
@@ -138,8 +126,15 @@ gulp.task('icons', function () {
 
 gulp.task('files', function () {
   return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
-    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1]])
+    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1],
+    path.src.fonts])
     .pipe(dest(path.build.html))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('copyLibs', function () {
+  return src([path.scripts.modernizr])
+    .pipe(dest(path.build.js))
     .pipe(browserSync.stream());
 });
 
@@ -147,7 +142,7 @@ gulp.task('watchFiles', function () {
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.css, css);
   gulp.watch(path.watch.img, images);
-  gulp.watch(path.scripts.main, gulp.series(manualUpdate, html));
+  gulp.watch(path.scripts.main, js);
 });
 
 gulp.task('clean', function () {
@@ -160,7 +155,7 @@ gulp.task('linter', function () {
     .pipe(eslint.format());
 });
 
-
-gulp.task('build', gulp.series('clean', 'js', gulp.parallel('mapCopy', css, html, 'files', images, 'icons')));
-gulp.task('server', gulp.parallel('watchFiles', 'browser_sync'));
-gulp.task('default', gulp.parallel('build'));
+gulp.task('build', gulp.series('clean', js, gulp.parallel(html, css, images, 'icons', 'files', 'copyLibs')));
+gulp.task('prod', gulp.series('clean', 'jsProd', gulp.parallel(html, css, images, 'icons', 'files', 'copyLibs')));
+gulp.task('dev', gulp.series('linter', gulp.parallel('build', 'watchFiles', 'browser_sync')));
+gulp.task('default', gulp.parallel('dev'));
