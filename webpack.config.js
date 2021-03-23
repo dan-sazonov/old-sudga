@@ -1,6 +1,5 @@
 const isDev = process.env.NODE_ENV === 'development';
 const path = require('path');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
@@ -12,9 +11,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist')
   },
   devtool: isDev ? 'source-map' : false,
-  // plugins: [
-  //   new CleanWebpackPlugin()
-  // ],
+  plugins: [],
   module: {
     rules: [
       {

@@ -39,17 +39,12 @@ const del = require('del');
 const autoprefixer = require('gulp-autoprefixer');
 const groupMedia = require('gulp-group-css-media-queries');
 const cleanCSS = require('gulp-clean-css');
-const uglify = require('gulp-uglify-es').default();
-const babel = require('gulp-babel');
 const imagemin = require('gulp-imagemin');
 const webp = require('gulp-webp');
 const webphtml = require('gulp-webp-html');
 const eslint = require('gulp-eslint');
 const sass = require('gulp-sass');
 const {exec} = require('child_process');
-const webpack = require('webpack');
-const webpackStream = require('webpack-stream');
-const webpackConfig = require('./webpack.config.js');
 
 function html() {
   return src(path.src.html)
