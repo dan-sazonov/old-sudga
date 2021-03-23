@@ -1,8 +1,7 @@
 @import "normalize"; // нормализует стили браузера
 @import "main"; // дефолтные стили Boilerplate
 @import "custom"; // глобальные переменные
-@import "~bootstrap";
-//@import "~bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 .outdated {
   text-align: center;

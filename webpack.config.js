@@ -5,16 +5,16 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    main: ['@babel/polyfill', './js/main.js']
+    main: ['@babel/polyfill', './js/main.js', './js/plugins.js']
   },
   output: {
     filename: 'js/[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: isDev ? 'source-map' : false,
-  plugins: [
-    new CleanWebpackPlugin()
-  ],
+  // plugins: [
+  //   new CleanWebpackPlugin()
+  // ],
   module: {
     rules: [
       {
