@@ -154,10 +154,7 @@ gulp.task('linter', function () {
     .pipe(eslint.format());
 });
 
-
-// gulp.task('js', gulp.series('clean', js, 'fuck', gulp.parallel('watchFiles', 'browser_sync')));
 gulp.task('build', gulp.series('clean', js, gulp.parallel(html, css, images, 'icons', 'files', 'copyLibs')));
+gulp.task('prod', gulp.series('clean', 'jsProd', gulp.parallel(html, css, images, 'icons', 'files', 'copyLibs')));
 gulp.task('dev', gulp.series('linter', gulp.parallel('build', 'watchFiles', 'browser_sync')));
-// gulp.task('build', gulp.series('clean', 'js', gulp.parallel('mapCopy', css, html, 'files', images, 'icons')));
-// gulp.task('server', gulp.parallel('watchFiles', 'browser_sync'));
-// gulp.task('default', gulp.parallel('build'));
+gulp.task('default', gulp.parallel('dev'));
