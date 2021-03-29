@@ -14,7 +14,7 @@ const path = {
     js: ['src/js/tmp/main.js', 'src/js/modernizr.min.js', 'src/js/plugins.js'],
     ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
     img: sourceFolder + '/img/*.+(png|jpg|gif|ico|svg|webp)',
-    fonts: sourceFolder + '/**/*.+(ttf|otf|woff|eot)',
+    fonts: sourceFolder + '/**/*.+(ttf|otf|woff|eot|woff2)',
   },
   watch: {
     html: sourceFolder + '/**/*.html',

@@ -1,6 +1,6 @@
 @import "normalize"; // нормализует стили браузера
 @import "main"; // дефолтные стили Boilerplate
-@import "custom"; // глобальные переменные
+@import "custom"; // глобальные переменные и шрифты
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 .outdated {
@@ -13,4 +13,33 @@
   color: $err-red;
   background-color: $err-red;
   height: 5px;
+}
+
+header {
+  background-color: $main;
+  color: white;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Fakedes Outline', monospace;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header > i {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 23px;
 }

@@ -6,3 +6,27 @@ $main-semi-light: #A58A83;
 $main-light: #D2C4C1;
 $main-ultralight: #F0EBEA;
 $err-red: #dc3545;
+
+@font-face {
+    font-family: 'Fakedes Outline';
+    src: url('/fonts/FakedesOutline.eot');
+    src: local('Fakedes Outline'), local('FakedesOutline'),
+        url('/fonts/FakedesOutline.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/FakedesOutline.woff2') format('woff2'),
+        url('/fonts/FakedesOutline.woff') format('woff'),
+        url('/fonts/FakedesOutline.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fakedes Outline';
+    src: url('/fonts/FakedesOutline-Bold.eot');
+    src: local('Fakedes Outline Bold'), local('FakedesOutline-Bold'),
+        url('/fonts/FakedesOutline-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/FakedesOutline-Bold.woff2') format('woff2'),
+        url('/fonts/FakedesOutline-Bold.woff') format('woff'),
+        url('/fonts/FakedesOutline-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
