@@ -43,3 +43,11 @@ header > i {
   margin-bottom: 15px;
   font-size: 23px;
 }
+
+
+footer {
+  background-color: $main-semi-dark;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
