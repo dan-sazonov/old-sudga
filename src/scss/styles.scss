@@ -1,6 +1,12 @@
-@import "normalize"; // нормализует стили браузера
-@import "main"; // дефолтные стили Boilerplate
-@import "custom"; // глобальные переменные и шрифты
+@import "normalize";
+// нормализует стили браузера
+
+@import "main";
+// дефолтные стили Boilerplate
+
+@import "custom";
+// глобальные переменные и шрифты
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 .outdated {
@@ -19,13 +25,14 @@ header {
   background-color: map_get($theme-colors, main);
   color: white;
 }
+
 header .row {
   flex-direction: row;
   justify-content: space-between;
 }
 
 .logo {
-  font-family: 'Fakedes Outline', monospace;
+  font-family: $font-family-poster;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 24px
@@ -49,9 +56,11 @@ footer {
   color: white;
 
 }
+
 footer .container {
   padding: 0;
 }
+
 footer .col {
   width: 100%;
   padding: 0;
@@ -104,5 +113,5 @@ address {
 }
 
 .social a {
-    font-size: 21px;
+  font-size: 21px;
 }
