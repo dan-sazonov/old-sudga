@@ -18,9 +18,8 @@
 header {
   background-color: $main;
   color: white;
-  display: -webkit-flex;
-  display: -ms-flex;
-  display: flex;
+}
+header .row {
   flex-direction: row;
   justify-content: space-between;
 }
@@ -48,7 +47,14 @@ header > i {
 footer {
   background-color: $main-semi-dark;
   color: white;
-  display: flex;
+
+}
+footer .container {
+  padding: 0;
+}
+footer .col {
+  width: 100%;
+  padding: 0;
   flex-direction: column;
 }
 
@@ -75,7 +81,7 @@ footer {
 }
 
 .primary {
-  margin-top: 18px;
+  padding-top: 18px;
   display: flex;
 }
 
