@@ -6,17 +6,17 @@
 .outdated {
   text-align: center;
   font-weight: bold;
-  color: $err-red;
+  color: $red;
 }
 
 .outdated-line {
-  color: $err-red;
-  background-color: $err-red;
+  color: $red;
+  background-color: $red;
   height: 5px;
 }
 
 header {
-  background-color: $main;
+  background-color: map_get($theme-colors, main);
   color: white;
 }
 header .row {
@@ -45,7 +45,7 @@ header > i {
 
 
 footer {
-  background-color: $main-semi-dark;
+  background-color: map_get($theme-colors, main-semi-dark);
   color: white;
 
 }
@@ -77,7 +77,7 @@ footer .col {
 }
 
 .secondary a {
-  color: $main-light;
+  color: map_get($theme-colors, main-light);
 }
 
 .primary {
@@ -87,7 +87,7 @@ footer .col {
 
 .author {
   padding: 14px 0 24px;
-  border-top: solid 1px $main-light;
+  border-top: solid 1px map_get($theme-colors, main-light);
   display: flex;
   justify-content: space-between;
 }

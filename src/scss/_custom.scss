@@ -1,12 +1,14 @@
 // цвета
-$main-dark: #1F120E;
-$main-semi-dark: #2A1813;
-$main: #6A3D31;
-$main-semi-light: #A58A83;
-$main-light: #D2C4C1;
-$main-ultralight: #F0EBEA;
-$err-red: #dc3545;
+$theme-colors: (
+    "main-dark": #1F120E,
+    "main-semi-dark": #2A1813,
+    "main": #6A3D31,
+    "main-semi-light": #A58A83,
+    "main-light": #D2C4C1,
+    "main-ultralight": #F0EBEA
+);
 
+// шрифты
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 @font-face {
