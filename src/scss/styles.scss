@@ -35,7 +35,7 @@ header .row {
   font-family: $font-family-poster;
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 24px
+  font-size: 1.5rem;
 }
 
 .center {
@@ -45,9 +45,9 @@ header .row {
 }
 
 header > i {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  font-size: 23px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 
@@ -69,8 +69,8 @@ footer .col {
 
 .links {
   padding: 0;
-  font-size: 16px;
-  margin-bottom: 14px;
+  font-size: 1rem;
+  margin-bottom: 0.87rem;
 }
 
 .links > li {
@@ -82,7 +82,7 @@ footer .col {
 }
 
 .primary li:not(:first-child) {
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 
 .secondary a {
@@ -90,12 +90,12 @@ footer .col {
 }
 
 .primary {
-  padding-top: 18px;
+  padding-top: 1.125rem;
   display: flex;
 }
 
 .author {
-  padding: 14px 0 24px;
+  padding: 0.87rem 0 1.5rem;
   border-top: solid 1px map_get($theme-colors, main-light);
   display: flex;
   justify-content: space-between;
@@ -109,9 +109,9 @@ address {
 }
 
 .social a:not(:first-child) {
-  margin-left: 16px;
+  margin-left: 1rem;
 }
 
 .social a {
-  font-size: 21px;
+  font-size: 1.37rem;
 }
