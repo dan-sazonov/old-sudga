@@ -10,89 +10,92 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 .outdated {
-  text-align: center;
-  font-weight: bold;
   color: $red;
+
+  .outdated__text {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .outdated__line {
+    background-color: $red;
+    height: 5px;
+  }
 }
 
-.outdated-line {
-  color: $red;
-  background-color: $red;
-  height: 5px;
-}
-
-header {
-  background-color: map_get($theme-colors, main);
-  color: white;
-}
-
-header .row {
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: $font-family-poster;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.center {
+.icon_center {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-header > i {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+.header {
+  background-color: map_get($theme-colors, main);
+  color: white;
+
+  .row {
+    flex-direction: row;
+    justify-content: space-between;
+
+  }
+
+  .logo {
+    font-family: $font-family-poster;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+  i {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
 }
 
 
-footer {
+.footer {
   background-color: map_get($theme-colors, main-semi-dark);
   color: white;
 
+  .container {
+    padding: 0;
+  }
+
+  .col {
+    width: 100%;
+    padding: 0;
+    flex-direction: column;
+  }
 }
 
-footer .container {
-  padding: 0;
-}
-
-footer .col {
-  width: 100%;
-  padding: 0;
-  flex-direction: column;
-}
-
-.links {
+.nav__links {
   padding: 0;
   font-size: 1rem;
   margin-bottom: 0.87rem;
+
+  .links__item {
+    list-style-type: none;
+  }
 }
 
-.links > li {
-  list-style-type: none;
+.nav__links_primary {
+  padding-top: 1.125rem;
+  display: flex;
+
+  a {
+    color: white;
+  }
+
+  .links__item:not(:first-child) {
+    margin-left: 1rem;
+  }
 }
 
-.primary a, .social a {
-  color: white;
-}
-
-.primary li:not(:first-child) {
-  margin-left: 1rem;
-}
-
-.secondary a {
+.nav__links_secondary a {
   color: map_get($theme-colors, main-light);
 }
 
-.primary {
-  padding-top: 1.125rem;
-  display: flex;
-}
 
 .author {
   padding: 0.87rem 0 1.5rem;
@@ -108,10 +111,13 @@ address {
   justify-content: center;
 }
 
-.social a:not(:first-child) {
-  margin-left: 1rem;
-}
+.author__social {
+  a {
+    color: white;
+    font-size: 1.37rem;
+  }
 
-.social a {
-  font-size: 1.37rem;
+  a:not(:first-child) {
+    margin-left: 1rem;
+  }
 }
