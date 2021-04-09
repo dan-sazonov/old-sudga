@@ -74,6 +74,11 @@
       height: 100%;
     }
   }
+  .aside__footer {
+    width: 81%;
+    margin-bottom: 1.5rem;
+    color: map_get($theme-colors, main-semi-light);
+  }
 }
 
 
