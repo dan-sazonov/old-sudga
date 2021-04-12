@@ -30,6 +30,17 @@
   text-align: center;
 }
 
+// todo превратить кнопку в эту фигню после клика
+.header__button_active {
+  position: absolute;
+  z-index: 15;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  left: 100%;
+  bottom: 0;
+}
+
 .logo {
   font-family: $font-family-poster;
   text-transform: uppercase;
@@ -46,7 +57,13 @@
     justify-content: space-between;
 
   }
-
+  .header__button_inactive {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
   i {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -66,50 +83,48 @@
     padding: 0;
     flex-direction: column;
   }
+
   .aside__header {
     background-color: map_get($theme-colors, main);
     color: white;
     height: 3.5rem;
+
     .logo {
       height: 100%;
     }
   }
+
   .aside__nav {
     ul {
       padding: 0;
       margin: 0;
       border-bottom: solid 1px map_get($theme-colors, main-light);
     }
+
     li {
       list-style: none;
     }
+
     i {
       margin: 0.875rem 1.375rem 0.875rem 1.25rem;
       font-size: 1.4rem;
     }
+
     a {
       color: map_get($theme-colors, main-semi-light);
       font-weight: 600;
     }
   }
+
   .aside__nav_other ul {
     border-bottom: none;
   }
+
   .aside__footer {
     width: 81%;
     margin-bottom: 1.5rem;
     color: map_get($theme-colors, main-semi-light);
   }
-}
-.aside:after {
-  content: '';
-  position: absolute;
-  z-index: 11;
-  width: calc(100vw - 100%);
-  height: 100%;
-  background-color: rgba(0, 0, 0, .4);
-  left: 100%;
-  bottom: 0;
 }
 
 .footer {
