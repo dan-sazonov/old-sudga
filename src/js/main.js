@@ -12,7 +12,19 @@ import 'bootstrap/js/dist/util';
 // import Toast from 'bootstrap/js/dist/toast';
 // import Tooltip from 'bootstrap/js/dist/tooltip';
 
+const asideHideBtn = '.aside__hide-btn';
+const asideShowBtn = '.header__aside-btn';
+
 $(document).ready(function () {
   console.log('Hello world');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
+
+  $(asideShowBtn).click(function(){
+    $('.aside').toggleClass('aside_open');
+    $(asideHideBtn).toggleClass('aside__shadow_active')
+  });
+  $(asideHideBtn).click(function(){
+    $('.aside').toggleClass('aside_open');
+    $(asideHideBtn).toggleClass('aside__shadow_active');
+  })
 });

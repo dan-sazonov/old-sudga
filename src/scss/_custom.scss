@@ -9,7 +9,12 @@ $theme-colors: (
 );
 
 // шрифты
+$medium: 600;
 $font-family-poster: 'Fakedes Outline', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+// размеры
+$aside-width: calc(100vw - 19%);
+$aside-toggle-time: .3s;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 

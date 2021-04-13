@@ -9,6 +9,10 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+body {
+  overflow: hidden;
+}
+
 .outdated {
   color: $red;
 
@@ -30,15 +34,21 @@
   text-align: center;
 }
 
-// todo превратить кнопку в эту фигню после клика
-.header__button_active {
+.aside__shadow {
   position: absolute;
-  z-index: 15;
-  width: 100vw;
+  z-index: 9;
   height: 100%;
+  width: 100%;
+  transition-property: background-color;
+  transition-duration: $aside-toggle-time;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  right: 100%;
+}
+.aside__shadow_active {
   background-color: rgba(0, 0, 0, .4);
-  left: 100%;
-  bottom: 0;
+  right: 0;
 }
 
 .logo {
@@ -57,7 +67,7 @@
     justify-content: space-between;
 
   }
-  .header__button_inactive {
+  .header__button {
     background-color: inherit;
     color: inherit;
     border: none;
@@ -72,11 +82,13 @@
 }
 
 .aside {
-  position: absolute;
+  position: fixed;
   z-index: 10;
-  width: 81%;
+  width: $aside-width;
   height: 100%;
   background-color: white;
+  left: - 82%;
+  transition: $aside-toggle-time;
 
   .col {
     width: 100%;
@@ -112,7 +124,7 @@
 
     a {
       color: map_get($theme-colors, main-semi-light);
-      font-weight: 600;
+      font-weight: $medium;
     }
   }
 
@@ -121,10 +133,14 @@
   }
 
   .aside__footer {
-    width: 81%;
+    width: $aside-width;
     margin-bottom: 1.5rem;
     color: map_get($theme-colors, main-semi-light);
   }
+}
+
+.aside_open {
+  left: 0;
 }
 
 .footer {
@@ -170,8 +186,8 @@
 }
 
 
-.author {
-  padding: 0.87rem 0 1.5rem; // fixme using BEM
+.footer__author {
+  padding: 0.87rem 0 1.5rem;
   border-top: solid 1px map_get($theme-colors, main-light);
   display: flex;
   justify-content: space-between;
