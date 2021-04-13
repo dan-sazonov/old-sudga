@@ -91,9 +91,12 @@ body {
   transition: $aside-toggle-time;
 
   .col {
+    display: flex;
     width: 100%;
+    height: 100%;
     padding: 0;
     flex-direction: column;
+    justify-content: space-between;
   }
 
   .aside__header {
@@ -133,7 +136,7 @@ body {
   }
 
   .aside__footer {
-    width: $aside-width;
+    width: 100%;
     margin-bottom: 1.5rem;
     color: map_get($theme-colors, main-semi-light);
   }
