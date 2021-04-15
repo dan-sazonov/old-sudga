@@ -89,12 +89,19 @@ body {
   }
   .search__input {
     width: 13.5rem;
+    border: solid 2px map_get($theme-colors, main-light);
+    color: map_get($theme-colors, main);
   }
   .search__btn {
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin-left: .5rem;
+    color: map_get($theme-colors, main);
+    background-color: $white;
+    border: solid 2px map_get($theme-colors, main-semi-light);
+    font-size: 1rem;
+    font-weight: $medium;
   }
 }
 
