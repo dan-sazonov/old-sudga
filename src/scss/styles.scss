@@ -88,7 +88,7 @@ body {
     height: 2rem;
   }
   .search__input {
-    width: 13.5rem;
+    width: 58vw!important;
     border: solid 2px map_get($theme-colors, main-light);
     color: map_get($theme-colors, main);
   }
