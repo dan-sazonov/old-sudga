@@ -20,24 +20,34 @@ $(document).ready(function () {
   console.log('Hello world');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
+  function showAside() {
+    // показывает сайдбар и сворачивает форму поиска
+    hideSearchForm();
+    $('.aside').toggleClass('aside_open');
+    $(asideHideBtn).toggleClass('aside__shadow_active')
+  }
+
+  function hideAside() {
+    // скрывает сайдбар
+    $('.aside').toggleClass('aside_open');
+    $(asideHideBtn).toggleClass('aside__shadow_active');
+  }
+
+  function showSearchForm() {
+    // показывает форму поиска
+    $('.logo').addClass('hidden');
+    $(searchBtn).addClass('hidden');
+    $('.search').removeClass('hidden');
+  }
+
   function hideSearchForm() {
+    // сворачивает форму поиска
     $('.search').addClass('hidden');
     $('.logo').removeClass('hidden');
     $(searchBtn).removeClass('hidden');
   }
 
-  $(asideShowBtn).click(function(){
-    hideSearchForm();
-    $('.aside').toggleClass('aside_open');
-    $(asideHideBtn).toggleClass('aside__shadow_active')
-  });
-  $(asideHideBtn).click(function(){
-    $('.aside').toggleClass('aside_open');
-    $(asideHideBtn).toggleClass('aside__shadow_active');
-  });
-  $(searchBtn).click(function () {
-    $('.logo').addClass('hidden');
-    $(searchBtn).addClass('hidden');
-    $('.search').removeClass('hidden');
-  })
+  $(asideShowBtn).click(showAside);
+  $(asideHideBtn).click(hideAside);
+  $(searchBtn).click(showSearchForm);
 });
