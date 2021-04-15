@@ -15,6 +15,7 @@ body {
 
 .outdated {
   color: $red;
+  background-color: white;
 
   .outdated__text {
     text-align: center;
@@ -46,6 +47,7 @@ body {
   outline: none;
   right: 100%;
 }
+
 .aside__shadow_active {
   background-color: rgba(0, 0, 0, .4);
   right: 0;
@@ -61,7 +63,7 @@ body {
 .header {
   background-color: map_get($theme-colors, main);
   color: white;
-
+  padding-left: 0;
   .row {
     flex-direction: row;
     justify-content: space-between;
@@ -78,6 +80,21 @@ body {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 1.5rem;
+  }
+  .header__aside-btn {
+    padding-left: 1rem;
+  }
+  .search__input, .search__btn {
+    height: 2rem;
+  }
+  .search__input {
+    width: 13.5rem;
+  }
+  .search__btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: .5rem;
   }
 }
 

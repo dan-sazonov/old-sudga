@@ -14,17 +14,30 @@ import 'bootstrap/js/dist/util';
 
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
+const searchBtn = '.header__search-btn';
 
 $(document).ready(function () {
   console.log('Hello world');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
+  function hideSearchForm() {
+    $('.search').addClass('hidden');
+    $('.logo').removeClass('hidden');
+    $(searchBtn).removeClass('hidden');
+  }
+
   $(asideShowBtn).click(function(){
+    hideSearchForm();
     $('.aside').toggleClass('aside_open');
     $(asideHideBtn).toggleClass('aside__shadow_active')
   });
   $(asideHideBtn).click(function(){
     $('.aside').toggleClass('aside_open');
     $(asideHideBtn).toggleClass('aside__shadow_active');
+  });
+  $(searchBtn).click(function () {
+    $('.logo').addClass('hidden');
+    $(searchBtn).addClass('hidden');
+    $('.search').removeClass('hidden');
   })
 });

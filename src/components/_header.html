@@ -39,6 +39,7 @@
     </div>
 </aside>
 <button class="aside__shadow aside__hide-btn" aria-hidden="true">&nbsp;</button>
+
 <header class="container-fluid header">
     <!--[if lt IE 10]>
     <div class="outdated">
@@ -54,7 +55,11 @@
         <div class="row">
             <button class="header__button header__aside-btn"><i class="fas fa-bars item_center"></i></button>
             <span class="logo item_center">давняя суджа</span>
-            <i class="fas fa-search item_center"></i>
+            <form class="form-inline search hidden">
+                <input class="form-control mr-sm-2 search__input" type="search" placeholder="Поиск" aria-label="Поиск">
+                <button class="btn btn-outline-success my-2 my-sm-0 search__btn" type="submit">Поиск</button>
+            </form>
+            <button class="header__button header__search-btn"><i class="fas fa-search item_center"></i></button>
         </div>
     </div>
 </header>
