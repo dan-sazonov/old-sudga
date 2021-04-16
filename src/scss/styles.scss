@@ -213,11 +213,14 @@ body {
 }
 
 
-.footer__author {
+.footer__author  {
   padding: 0.87rem 0 1.5rem;
   border-top: solid 1px map_get($theme-colors, main-light);
   display: flex;
   justify-content: space-between;
+  address {
+    font-size: .95rem
+  }
 }
 
 address {
@@ -228,6 +231,9 @@ address {
 }
 
 .author__social {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
   a {
     color: white;
     font-size: 1.37rem;
