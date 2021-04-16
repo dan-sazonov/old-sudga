@@ -1,10 +1,18 @@
 # TEAM
 
-  Front-end, back-end, devops, design: Dan Sazonov
+  Product manager, editor-in-chief: Marina Agarkova
+  Contact: sudga.marina@rambler.ru
+
+  Full-stack developer, devops engineer, designer: Dan Sazonov
   Contact: p-294803@ya.ru
   Github: @dan-sazonov
 
+  Content production: Creative group of the Zamostyanskaya school
+  Contact: sudjansk503@mail.ru; https://sud-zam.ru/
+  Social: vk.com/zamostyanskayaschool
+
 # THANKS
+
     For these tutorials: https://youtu.be/eSaF8NXeNsA; https://youtu.be/stFOy0Noahg; https://youtu.be/7-sohNdOT4o
 
 # SITE
