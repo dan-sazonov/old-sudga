@@ -17,7 +17,7 @@ const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
 
 $(document).ready(function () {
-  console.log('Hello world');
+  console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
   function showAside() {
