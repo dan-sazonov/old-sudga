@@ -7,14 +7,20 @@ $theme-colors: (
     "main-light": #D2C4C1,
     "main-ultralight": #F0EBEA
 );
-
-// шрифты
-$medium: 600;
-$font-family-poster: 'Fakedes Outline', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+$main-dark: #1F120E;
+$main-semi-dark: #2A1813;
+$main: #6A3D31;
+$main-semi-light: #A58A83;
+$main-light: #D2C4C1;
+$main-ultralight: #F0EBEA;
 
 // размеры
 $aside-width: calc(100vw - 19%);
 $aside-toggle-time: .3s;
+
+// шрифты
+$medium: 600;
+$font-family-poster: 'Fakedes Outline', SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -40,4 +46,12 @@ $aside-toggle-time: .3s;
         url('/fonts/FakedesOutline-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+}
+
+// миксины
+
+@mixin vertical-align() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

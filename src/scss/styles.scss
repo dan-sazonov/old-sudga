@@ -29,9 +29,7 @@ body {
 }
 
 .item_center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include vertical-align();
   text-align: center;
 }
 
@@ -61,13 +59,12 @@ body {
 }
 
 .header {
-  background-color: map_get($theme-colors, main);
+  background-color: $main;
   color: white;
   padding-left: 0;
   .row {
     flex-direction: row;
     justify-content: space-between;
-
   }
   .header__button {
     background-color: inherit;
@@ -89,17 +86,15 @@ body {
   }
   .search__input {
     width: 58vw!important;
-    border: solid 2px map_get($theme-colors, main-light);
-    color: map_get($theme-colors, main);
+    border: solid 2px $main-light;
+    color: $main;
   }
   .search__btn {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include vertical-align();
     margin-left: .5rem;
-    color: map_get($theme-colors, main);
+    color: $main;
     background-color: $white;
-    border: solid 2px map_get($theme-colors, main-semi-light);
+    border: solid 2px $main-semi-light;
     font-size: 1rem;
     font-weight: $medium;
   }
@@ -124,7 +119,7 @@ body {
   }
 
   .aside__header {
-    background-color: map_get($theme-colors, main);
+    background-color: $main;
     color: white;
     height: 3.5rem;
 
@@ -137,7 +132,7 @@ body {
     ul {
       padding: 0;
       margin: 0;
-      border-bottom: solid 1px map_get($theme-colors, main-light);
+      border-bottom: solid 1px $main-light;
     }
 
     li {
@@ -150,7 +145,7 @@ body {
     }
 
     a {
-      color: map_get($theme-colors, main-semi-light);
+      color: $main-semi-light;
       font-weight: $medium;
     }
   }
@@ -162,7 +157,7 @@ body {
   .aside__footer {
     width: 100%;
     margin-bottom: 1.5rem;
-    color: map_get($theme-colors, main-semi-light);
+    color: $main-semi-light;
   }
 }
 
@@ -171,7 +166,7 @@ body {
 }
 
 .footer {
-  background-color: map_get($theme-colors, main-semi-dark);
+  background-color: $main-semi-dark;
   color: white;
 
   .container {
@@ -209,31 +204,28 @@ body {
 }
 
 .nav__links_secondary a {
-  color: map_get($theme-colors, main-light);
+  color: $main-light;
 }
-
 
 .footer__author  {
   padding: 0.87rem 0 1.5rem;
-  border-top: solid 1px map_get($theme-colors, main-light);
+  border-top: solid 1px $main-light;
   display: flex;
   justify-content: space-between;
   address {
+    text-align: center;
     font-size: .95rem
   }
 }
 
 address {
   margin-bottom: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  @include vertical-align();
 }
 
 .author__social {
+  @include vertical-align();
   display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
   a {
     color: white;
     font-size: 1.37rem;
