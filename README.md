@@ -88,4 +88,4 @@ _Разработка идет на ветке `develop`, для удобств�
 [:e-mail: Email](mailto:p-294803@yandex.ru) <br>
 
 ## Лицензия
-Проект под лицензией MIT. Подробности см. в файле [LICENSE](https://github.com/dan-sazonov/old-sudga/blob/main/LICENSE).
+Проект под лицензией Apache License Version 2.0. Подробности см. в файле [LICENSE](https://github.com/dan-sazonov/old-sudga/blob/main/LICENSE).
