@@ -1,0 +1,27 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+<head>
+    <title>Страница не найдена</title>
+    @@include('components/_head-com.html') <!-- иконки, настройки браузера (общие) -->
+    @@include('components/_seo.html') <!-- уникальные для каждой стр сео настройки -->
+</head>
+
+<body class="d-flex flex-column justify-content-between">
+@@include('components/_header.html')
+
+<main class="d-flex flex-fill err-main">
+    <div class="container d-flex flex-column justify-content-around flex-fill">
+        <div class="err-emoji d-flex flex-column"><i class="far fa-frown-open err-i"></i></div>
+        <div class="err-title">
+            <h1>Что-то пошло не так...</h1>
+            <p class="err-p"><a href="404.html">Расскажите нам</a>, как вы попали на эту страницу, и мы всё исправим</p>
+        </div>
+    </div>
+</main>
+
+@@include('components/_footer.html')
+<script src="js/main.js"></script>
+
+</body>
+</html>
