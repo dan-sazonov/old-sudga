@@ -221,6 +221,12 @@ body {
 address {
   margin-bottom: 0;
   @include vertical-align();
+  span {
+    font-size: .9rem;
+    i {
+      display: inline-flex!important;
+    }
+  }
 }
 
 .author__social {
