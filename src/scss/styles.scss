@@ -12,9 +12,14 @@
 
 // общие стили:
 body {
+  color: $main-dark;
   min-height: 100vh;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+a {
+  color: $main;
 }
 
 .outdated {
@@ -85,23 +90,24 @@ body {
   .header__aside-btn {
     padding-left: 1rem;
   }
-  .search__input, .search__btn {
-    height: 2rem;
-  }
-  .search__input {
-    width: 58vw!important;
-    border: solid 2px $main-light;
-    color: $main;
-  }
-  .search__btn {
-    @include vertical-align();
-    margin-left: .5rem;
-    color: $main;
-    background-color: $white;
-    border: solid 2px $main-semi-light;
-    font-size: 1rem;
-    font-weight: $medium;
-  }
+}
+
+.search__input, .search__btn {
+  height: 2rem;
+}
+.search__input {
+  width: 58vw!important;
+  border: solid 2px $main-light;
+  color: $main;
+}
+.search__btn {
+  @include vertical-align();
+  margin-left: .5rem;
+  color: $main;
+  background-color: $white;
+  border: solid 2px $main-semi-light;
+  font-size: 1rem;
+  font-weight: $medium;
 }
 
 .aside {
@@ -247,4 +253,4 @@ address {
 }
 
 // стили для страниц:
-@import "404";
+@import "err";

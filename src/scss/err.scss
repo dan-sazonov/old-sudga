@@ -1,0 +1,36 @@
+@import "custom";
+
+.err-main {
+  text-align: center;
+}
+
+.err-emoji {
+  color: $main;
+
+  i {
+    font-size: 6rem;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 3rem;
+  }
+}
+
+.err-title {
+  h1 {
+    font-size: 1.4rem;
+    font-weight: $medium;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
+
+.err-link {
+  p {
+    font-size: 1.1rem;
+  }
+}

@@ -2,18 +2,29 @@
 <html class="no-js" lang="ru">
 
 <head>
-  <title>Страница не найдена</title>
-  @@include('components/_head-com.html') <!-- иконки, настройки браузера (общие) -->
-  @@include('components/_seo.html') <!-- уникальные для каждой стр сео настройки -->
+    <title>Страница не найдена</title>
+    @@include('components/_head-com.html') <!-- иконки, настройки браузера (общие) -->
+    @@include('components/_seo.html') <!-- уникальные для каждой стр сео настройки -->
 </head>
 
 <body class="d-flex flex-column justify-content-between">
 @@include('components/_header.html')
 
-<main>
-  <div class="container">
-    404
-  </div>
+<main class="d-flex flex-fill err-main">
+    <div class="container d-flex flex-column justify-content-around flex-fill">
+        <div class="err-emoji d-flex flex-column"><i class="far fa-frown-open"></i><span>404</span></div>
+        <div class="err-title">
+          <h1>Страницы по этому адресу нет</h1>
+          <p>Попробуйте найти её через поиск по сайту</p>
+        </div>
+        <div class="err-search">
+            <form class="form-inline search d-flex justify-content-center" >
+                <input class="form-control mr-sm-2 search__input" type="search" placeholder="Поиск по сайту" aria-label="Поиск">
+                <button class="btn btn-outline-success my-2 my-sm-0 search__btn" type="submit">Найти</button>
+            </form>
+        </div>
+        <div class="err-link"><p>Проблема осталась? <a href="404.html">Свяжитесь с нами</a></p></div>
+    </div>
 </main>
 
 @@include('components/_footer.html')
