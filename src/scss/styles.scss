@@ -9,8 +9,12 @@
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+
+// общие стили:
 body {
-  overflow: hidden;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .outdated {
@@ -241,3 +245,6 @@ address {
     }
   }
 }
+
+// стили для страниц:
+@import "404";
