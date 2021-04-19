@@ -65,16 +65,13 @@ a {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.5rem;
+  color: $white;
 }
 
 .header {
   background-color: $main;
   color: white;
   padding-left: 0;
-  .row {
-    flex-direction: row;
-    justify-content: space-between;
-  }
   .header__button {
     background-color: inherit;
     color: inherit;
@@ -114,28 +111,18 @@ a {
   position: fixed;
   z-index: 10;
   width: $aside-width;
-  height: 100%;
   background-color: white;
   left: - 82%;
   transition: $aside-toggle-time;
 
   .col {
-    display: flex;
-    width: 100%;
-    height: 100%;
     padding: 0;
-    flex-direction: column;
-    justify-content: space-between;
   }
 
   .aside__header {
     background-color: $main;
     color: white;
     height: 3.5rem;
-
-    .logo {
-      height: 100%;
-    }
   }
 
   .aside__nav {
@@ -165,7 +152,6 @@ a {
   }
 
   .aside__footer {
-    width: 100%;
     margin-bottom: 1.5rem;
     color: $main-semi-light;
   }
@@ -184,9 +170,7 @@ a {
   }
 
   .col {
-    width: 100%;
     padding: 0;
-    flex-direction: column;
   }
 }
 
@@ -202,7 +186,6 @@ a {
 
 .nav__links_primary {
   padding-top: 1.125rem;
-  display: flex;
 
   a {
     color: white;
@@ -220,8 +203,6 @@ a {
 .footer__author  {
   padding: 0.87rem 0 1.5rem;
   border-top: solid 1px $main-light;
-  display: flex;
-  justify-content: space-between;
   address {
     text-align: center;
     font-size: .95rem
