@@ -15,6 +15,7 @@ import 'bootstrap/js/dist/util';
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
+const searchForm = '.search';
 
 $(document).ready(function () {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
@@ -37,12 +38,16 @@ $(document).ready(function () {
     // показывает форму поиска
     $('.logo').addClass('hidden');
     $(searchBtn).addClass('hidden');
-    $('.search').removeClass('hidden');
+    $(searchForm).removeClass('hidden');
+    setTimeout(function () {
+      $(searchForm).addClass('search_active');
+    }, 20);
   }
 
   function hideSearchForm() {
     // сворачивает форму поиска
-    $('.search').addClass('hidden');
+    $(searchForm).addClass('hidden');
+    $(searchForm).removeClass('search_active');
     $('.logo').removeClass('hidden');
     $(searchBtn).removeClass('hidden');
   }

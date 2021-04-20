@@ -48,7 +48,7 @@ a {
   height: 100%;
   width: 100%;
   transition-property: background-color;
-  transition-duration: $aside-toggle-time;
+  transition-duration: $animation-toggle-time;
   background-color: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
@@ -72,6 +72,7 @@ a {
   background-color: $main;
   color: white;
   padding-left: 0;
+
   .header__button {
     background-color: inherit;
     color: inherit;
@@ -79,32 +80,45 @@ a {
     outline: none;
     padding: 0;
   }
+
   i {
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-size: 1.5rem;
   }
+
   .header__aside-btn {
     padding-left: 1rem;
   }
-}
 
-.search__input, .search__btn {
-  height: 2rem;
-}
-.search__input {
-  width: 58vw!important;
-  border: solid 2px $main-light;
-  color: $main;
-}
-.search__btn {
-  @include vertical-align();
-  margin-left: .5rem;
-  color: $main;
-  background-color: $white;
-  border: solid 2px $main-semi-light;
-  font-size: 1rem;
-  font-weight: $medium;
+  .search {
+    opacity: 0;
+    transition: $animation-toggle-time
+  }
+
+  .search_active {
+    opacity: 1;
+  }
+
+  .search__input, .search__btn {
+    height: 2rem;
+  }
+
+  .search__input {
+    width: 58vw !important;
+    border: solid 2px $main-light;
+    color: $main;
+  }
+
+  .search__btn {
+    @include vertical-align();
+    margin-left: .5rem;
+    color: $main;
+    background-color: $white;
+    border: solid 2px $main-semi-light;
+    font-size: 1rem;
+    font-weight: $medium;
+  }
 }
 
 .aside {
@@ -113,7 +127,7 @@ a {
   width: $aside-width;
   background-color: white;
   left: - 82%;
-  transition: $aside-toggle-time;
+  transition: $animation-toggle-time;
 
   .col {
     padding: 0;
@@ -200,9 +214,10 @@ a {
   color: $main-light;
 }
 
-.footer__author  {
+.footer__author {
   padding: 0.87rem 0 1.5rem;
   border-top: solid 1px $main-light;
+
   address {
     text-align: center;
     font-size: .95rem
@@ -212,10 +227,12 @@ a {
 address {
   margin-bottom: 0;
   @include vertical-align();
+
   span {
     font-size: .9rem;
+
     i {
-      display: inline-flex!important;
+      display: inline-flex !important;
     }
   }
 }
@@ -223,6 +240,7 @@ address {
 .author__social {
   @include vertical-align();
   display: inline-flex;
+
   a {
     color: white;
     font-size: 1.37rem;
