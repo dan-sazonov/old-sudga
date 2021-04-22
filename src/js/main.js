@@ -16,6 +16,8 @@ const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
 const searchForm = '.search';
+const date = new Date();
+const currentYear = date.getFullYear();
 const debug = {
   showCookieAlert: true,
 };
@@ -27,7 +29,7 @@ $(document).ready(function () {
   if (!debug.showCookieAlert) {
     $('.cookie-alert').addClass('hidden');
   }
-
+  $('.cur-year').text(currentYear);
   function showAside() {
     // показывает сайдбар и сворачивает форму поиска
     hideSearchForm();
