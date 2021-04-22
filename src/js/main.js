@@ -19,7 +19,7 @@ const searchForm = '.search';
 const date = new Date();
 const currentYear = date.getFullYear();
 const debug = {
-  showCookieAlert: true,
+  showCookieAlert: false,
 };
 
 $(document).ready(function () {
@@ -27,8 +27,9 @@ $(document).ready(function () {
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
   if (!debug.showCookieAlert) {
-    $('.cookie-alert').addClass('hidden');
+    $('.cookie-alert').removeClass('d-flex').addClass('hidden');
   }
+
   $('.cur-year').text(currentYear);
   function showAside() {
     // показывает сайдбар и сворачивает форму поиска

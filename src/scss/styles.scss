@@ -90,30 +90,31 @@ a {
   .header__aside-btn {
     padding-left: 1rem;
   }
-
-  .search {
-    opacity: 0;
-    transition: $animation-toggle-time
-  }
-
-  .search_active {
-    opacity: 1;
-  }
-
-  .search__input, .search__btn {
-    height: 2rem;
-  }
-
-  .search__input {
-    width: 58vw !important;
-    border: solid 2px $main-light;
-    color: $main;
-  }
-
-  .search__btn {
-    @include btn-main();
-  }
 }
+
+.search { // не переносить в другие блоки, используем глобально!
+  opacity: 0;
+  transition: $animation-toggle-time
+}
+
+.search_active {
+  opacity: 1;
+}
+
+.search__input, .search__btn {
+  height: 2rem;
+}
+
+.search__input {
+  width: 58vw !important;
+  border: solid 2px $main-light;
+  color: $main;
+}
+
+.search__btn {
+  @include btn-main();
+}
+
 
 .aside {
   position: fixed;
