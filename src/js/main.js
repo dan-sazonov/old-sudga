@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
-// import Alert from 'bootstrap/js/dist/alert';
+import Alert from 'bootstrap/js/dist/alert';
 // import Button from 'bootstrap/js/dist/button';
 // import Carousel from 'bootstrap/js/dist/carousel';
 // import Collapse from 'bootstrap/js/dist/collapse';
@@ -16,16 +16,23 @@ const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
 const searchForm = '.search';
+const debug = {
+  showCookieAlert: true,
+};
 
 $(document).ready(function () {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
+  if (!debug.showCookieAlert) {
+    $('.cookie-alert').addClass('hidden');
+  }
+
   function showAside() {
     // показывает сайдбар и сворачивает форму поиска
     hideSearchForm();
     $('.aside').toggleClass('aside_open');
-    $(asideHideBtn).toggleClass('aside__shadow_active')
+    $(asideHideBtn).toggleClass('aside__shadow_active');
   }
 
   function hideAside() {

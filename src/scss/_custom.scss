@@ -1,11 +1,11 @@
 // цвета
 $theme-colors: (
-    "main-dark": #1F120E,
-    "main-semi-dark": #2A1813,
-    "main": #6A3D31,
-    "main-semi-light": #A58A83,
-    "main-light": #D2C4C1,
-    "main-ultralight": #F0EBEA
+        "main-dark": #1F120E,
+        "main-semi-dark": #2A1813,
+        "main": #6A3D31,
+        "main-semi-light": #A58A83,
+        "main-light": #D2C4C1,
+        "main-ultralight": #F0EBEA
 );
 $main-dark: #1F120E;
 $main-semi-dark: #2A1813;
@@ -25,33 +25,53 @@ $font-family-poster: 'Fakedes Outline', SFMono-Regular, Menlo, Monaco, Consolas,
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 @font-face {
-    font-family: 'Fakedes Outline';
-    src: url('/fonts/FakedesOutline.eot');
-    src: local('Fakedes Outline'), local('FakedesOutline'),
-        url('/fonts/FakedesOutline.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/FakedesOutline.woff2') format('woff2'),
-        url('/fonts/FakedesOutline.woff') format('woff'),
-        url('/fonts/FakedesOutline.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Fakedes Outline';
+  src: url('/fonts/FakedesOutline.eot');
+  src: local('Fakedes Outline'), local('FakedesOutline'),
+  url('/fonts/FakedesOutline.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/FakedesOutline.woff2') format('woff2'),
+  url('/fonts/FakedesOutline.woff') format('woff'),
+  url('/fonts/FakedesOutline.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Fakedes Outline';
-    src: url('/fonts/FakedesOutline-Bold.eot');
-    src: local('Fakedes Outline Bold'), local('FakedesOutline-Bold'),
-        url('/fonts/FakedesOutline-Bold.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/FakedesOutline-Bold.woff2') format('woff2'),
-        url('/fonts/FakedesOutline-Bold.woff') format('woff'),
-        url('/fonts/FakedesOutline-Bold.ttf') format('truetype');
-    font-weight: bold;
-    font-style: normal;
+  font-family: 'Fakedes Outline';
+  src: url('/fonts/FakedesOutline-Bold.eot');
+  src: local('Fakedes Outline Bold'), local('FakedesOutline-Bold'),
+  url('/fonts/FakedesOutline-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/FakedesOutline-Bold.woff2') format('woff2'),
+  url('/fonts/FakedesOutline-Bold.woff') format('woff'),
+  url('/fonts/FakedesOutline-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
 }
 
 // миксины
 
 @mixin vertical-align() {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin btn-main() {
+  @include vertical-align();
+  margin-left: .5rem;
+  color: $main;
+  background-color: $white;
+  border: solid 2px $main-semi-light;
+  font-size: 1rem;
+  font-weight: $medium;
+}
+
+@mixin btn-primary() {
+  @include vertical-align();
+  height: 2rem;
+  color: #31708F;
+  background-color: $white;
+  border: solid 2px #31708F;
+  font-size: 1.125rem;
+  font-weight: $medium;
 }

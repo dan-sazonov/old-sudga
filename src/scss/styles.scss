@@ -111,13 +111,7 @@ a {
   }
 
   .search__btn {
-    @include vertical-align();
-    margin-left: .5rem;
-    color: $main;
-    background-color: $white;
-    border: solid 2px $main-semi-light;
-    font-size: 1rem;
-    font-weight: $medium;
+    @include btn-main();
   }
 }
 
@@ -185,6 +179,18 @@ a {
 
   .col {
     padding: 0;
+  }
+
+  .cookie-alert {
+    p {
+      font-size: 1.125rem;
+      color: #31708F;
+      text-align: center;
+    }
+
+    .cookie-alert__close-btn {
+      @include btn-primary();
+    }
   }
 }
 
