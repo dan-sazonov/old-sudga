@@ -56,8 +56,7 @@ $(document).ready(function () {
 
   function hideSearchForm() {
     // сворачивает форму поиска
-    $(searchForm).addClass('hidden');
-    $(searchForm).removeClass('search_active');
+    $(searchForm).addClass('hidden').removeClass('search_active');
     $('.logo').removeClass('hidden');
     $(searchBtn).removeClass('hidden');
   }

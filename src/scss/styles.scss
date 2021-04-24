@@ -94,7 +94,7 @@ a {
 
 .search { // не переносить в другие блоки, используем глобально!
   opacity: 0;
-  transition: $animation-toggle-time
+  transition: $animation-toggle-time;
 }
 
 .search_active {
@@ -114,7 +114,6 @@ a {
 .search__btn {
   @include btn-main();
 }
-
 
 .aside {
   position: fixed;
