@@ -1,6 +1,6 @@
 import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
-import Alert from 'bootstrap/js/dist/alert';
+import Alert from 'bootstrap/js/dist/alert'; // линтер ругается, но так надо FIXME переписать нормально
 // import Button from 'bootstrap/js/dist/button';
 // import Carousel from 'bootstrap/js/dist/carousel';
 // import Collapse from 'bootstrap/js/dist/collapse';

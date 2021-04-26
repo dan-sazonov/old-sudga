@@ -126,7 +126,7 @@ gulp.task('icons', function () {
 
 gulp.task('files', function () {
   return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
-    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE', path.src.ico[1],
+    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE.txt', path.src.ico[1],
     path.src.fonts])
     .pipe(dest(path.build.html))
     .pipe(browserSync.stream());
