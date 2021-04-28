@@ -19,11 +19,11 @@
     "webpack-dev": "cross-env NODE_ENV=development webpack --mode development",
     "webpack-build": "cross-env NODE_ENV=production webpack --mode production",
     "webpack-watch": "cross-env NODE_ENV=production webpack --mode production --watch",
-    "webpack-stats": "webpack --json > log.json && webpack-bundle-analyzer log.json",
     "dev": "gulp",
     "build": "gulp prod",
-    "build-dev": "gulp build",
-    "lint": "gulp linter"
+    "lint": "gulp linter",
+    "stats": "webpack --json > log.json && webpack-bundle-analyzer log.json",
+    "deploy-beta": "gulp prod && cd dist && git init && git a && git cm \"update\" && git remote add origin https://github.com/old-sudga/old-sudga.github.io.git && git push --force origin master && exit"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
