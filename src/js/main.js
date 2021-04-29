@@ -1,3 +1,4 @@
+import 'airbnb-browser-shims';
 import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';

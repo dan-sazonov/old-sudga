@@ -28,7 +28,7 @@ const path = {
     modernizr: sourceFolder + '/js/modernizr.min.js',
   },
   clean: './' + projectFolder + '/',
-  lint: [sourceFolder + '/js/**/*.js', '!' + sourceFolder + '/js/**/*.min.js'],
+  lint: [sourceFolder + '/js/**/*.js', './*.js'],
 };
 
 // переменные плагинов
