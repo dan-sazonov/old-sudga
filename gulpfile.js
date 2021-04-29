@@ -2,33 +2,33 @@ const projectFolder = 'dist';
 const sourceFolder = 'src';
 const path = {
   build: {
-    html: projectFolder + '/',
-    css: projectFolder + '/css/',
-    js: projectFolder + '/js/',
-    ico: [projectFolder + '/ico/', projectFolder + '/'],
-    img: projectFolder + '/img/',
+    html: `${projectFolder  }/`,
+    css: `${projectFolder  }/css/`,
+    js: `${projectFolder  }/js/`,
+    ico: [`${projectFolder  }/ico/`, `${projectFolder  }/`],
+    img: `${projectFolder  }/img/`,
   },
   src: {
-    html: [sourceFolder + '/**/*.html', '!' + sourceFolder + '/components/_*.html'],
-    css: sourceFolder + '/scss/styles.scss',
+    html: [`${sourceFolder  }/**/*.html`, `!${  sourceFolder  }/components/_*.html`],
+    css: `${sourceFolder  }/scss/styles.scss`,
     js: ['src/js/tmp/main.js', 'src/js/modernizr.min.js', 'src/js/plugins.js'],
-    ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
-    img: sourceFolder + '/img/*.+(png|jpg|gif|ico|svg|webp)',
-    fonts: sourceFolder + '/**/*.+(ttf|otf|woff|eot|woff2)',
+    ico: [`${sourceFolder  }/ico/*.+(png|jpg|gif|ico|svg|webp)`, `${sourceFolder  }/favicon.ico`],
+    img: `${sourceFolder  }/img/*.+(png|jpg|gif|ico|svg|webp)`,
+    fonts: `${sourceFolder  }/**/*.+(ttf|otf|woff|eot|woff2)`,
   },
   watch: {
-    html: sourceFolder + '/**/*.html',
-    css: sourceFolder + '/scss/**/*.scss',
-    ico: [sourceFolder + '/ico/*.+(png|jpg|gif|ico|svg|webp)', sourceFolder + '/favicon.ico'],
-    img: sourceFolder + '/**/*.+(png|jpg|gif|ico|svg|webp)',
-    js: sourceFolder + 'js/main.js',
+    html: `${sourceFolder  }/**/*.html`,
+    css: `${sourceFolder  }/scss/**/*.scss`,
+    ico: [`${sourceFolder  }/ico/*.+(png|jpg|gif|ico|svg|webp)`, `${sourceFolder  }/favicon.ico`],
+    img: `${sourceFolder  }/**/*.+(png|jpg|gif|ico|svg|webp)`,
+    js: `${sourceFolder  }js/main.js`,
   },
   scripts: {
-    main: sourceFolder + '/js/main.js',
-    modernizr: sourceFolder + '/js/modernizr.min.js',
+    main: `${sourceFolder  }/js/main.js`,
+    modernizr: `${sourceFolder  }/js/modernizr.min.js`,
   },
-  clean: './' + projectFolder + '/',
-  lint: [sourceFolder + '/js/**/*.js', './*.js'],
+  clean: `./${  projectFolder  }/`,
+  lint: [`${sourceFolder  }/js/**/*.js`, './*.js'],
 };
 
 // переменные плагинов
@@ -102,58 +102,48 @@ function js(done) {
   return src('./').pipe(browserSync.stream());
 }
 
-gulp.task('browser_sync', function () {
+gulp.task('browser_sync', () => {
   browserSync.init({
     server: {
-      baseDir: './' + projectFolder + '/'
+      baseDir: `./${  projectFolder  }/`
     },
     port: 3000,
     browser: 'firefox'
   });
 });
 
-gulp.task('jsProd', function (done) {
+gulp.task('jsProd', (done) => {
   exec('npm run webpack-build');
   done();
   return src('./').pipe(browserSync.stream());
 });
 
-gulp.task('icons', function () {
-  return src(path.src.ico[0])
-    .pipe(dest(path.build.ico[0]))
-    .pipe(browserSync.stream());
-});
+gulp.task('icons', () => src(path.src.ico[0])
+  .pipe(dest(path.build.ico[0]))
+  .pipe(browserSync.stream()));
 
-gulp.task('files', function () {
-  return src([sourceFolder + '/browserconfig.xml', sourceFolder + '/humans.txt',
-    sourceFolder + '/robots.txt', sourceFolder + '/site.webmanifest', sourceFolder + '/LICENSE.txt', path.src.ico[1],
-    path.src.fonts])
-    .pipe(dest(path.build.html))
-    .pipe(browserSync.stream());
-});
+gulp.task('files', () => src([`${sourceFolder  }/browserconfig.xml`, `${sourceFolder  }/humans.txt`,
+  `${sourceFolder  }/robots.txt`, `${sourceFolder  }/site.webmanifest`, `${sourceFolder  }/LICENSE.txt`, path.src.ico[1],
+  path.src.fonts])
+  .pipe(dest(path.build.html))
+  .pipe(browserSync.stream()));
 
-gulp.task('copyLibs', function () {
-  return src([path.scripts.modernizr])
-    .pipe(dest(path.build.js))
-    .pipe(browserSync.stream());
-});
+gulp.task('copyLibs', () => src([path.scripts.modernizr])
+  .pipe(dest(path.build.js))
+  .pipe(browserSync.stream()));
 
-gulp.task('watchFiles', function () {
+gulp.task('watchFiles', () => {
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.css, css);
   gulp.watch(path.watch.img, images);
   gulp.watch(path.scripts.main, js);
 });
 
-gulp.task('clean', function () {
-  return del(path.clean);
-});
+gulp.task('clean', () => del(path.clean));
 
-gulp.task('linter', function () {
-  return src(path.lint)
-    .pipe(eslint())
-    .pipe(eslint.format());
-});
+gulp.task('linter', () => src(path.lint)
+  .pipe(eslint())
+  .pipe(eslint.format()));
 
 gulp.task('build', gulp.series('clean', js, gulp.parallel(html, css, images, 'icons', 'files', 'copyLibs')));
 gulp.task('prod', gulp.series('clean', 'jsProd', gulp.parallel(html, css, images, 'icons', 'files', 'copyLibs')));

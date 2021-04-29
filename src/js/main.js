@@ -23,7 +23,7 @@ const debug = {
   showCookieAlert: false,
 };
 
-$(document).ready(function () {
+$(document).ready(() => {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
@@ -50,7 +50,7 @@ $(document).ready(function () {
     $('.logo').addClass('hidden');
     $(searchBtn).addClass('hidden');
     $(searchForm).removeClass('hidden');
-    setTimeout(function () {
+    setTimeout(() => {
       $(searchForm).addClass('search_active');
     }, 20);
   }
