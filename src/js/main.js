@@ -1,16 +1,16 @@
 import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
-import Alert from 'bootstrap/js/dist/alert'; // линтер ругается, но так надо FIXME переписать нормально
-// import Button from 'bootstrap/js/dist/button';
-// import Carousel from 'bootstrap/js/dist/carousel';
-// import Collapse from 'bootstrap/js/dist/collapse';
-// import Dropdown from 'bootstrap/js/dist/dropdown';
-// import Modal from 'bootstrap/js/dist/modal';
-// import Popover from 'bootstrap/js/dist/popover';
-// import Scrollspy from 'bootstrap/js/dist/scrollspy';
-// import Tab from 'bootstrap/js/dist/tab';
-// import Toast from 'bootstrap/js/dist/toast';
-// import Tooltip from 'bootstrap/js/dist/tooltip';
+import 'bootstrap/js/dist/alert';
+// import 'bootstrap/js/dist/button';
+// import 'bootstrap/js/dist/carousel';
+// import 'bootstrap/js/dist/collapse';
+// import 'bootstrap/js/dist/dropdown';
+// import 'bootstrap/js/dist/modal';
+// import 'bootstrap/js/dist/popover';
+// import 'bootstrap/js/dist/scrollspy';
+// import 'bootstrap/js/dist/tab';
+// import 'bootstrap/js/dist/toast';
+// import 'bootstrap/js/dist/tooltip';
 
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
