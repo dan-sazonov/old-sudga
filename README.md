@@ -1,6 +1,7 @@
 # Давняя Суджа
 [![GitHub](https://img.shields.io/github/license/dan-sazonov/old-sudga)](https://github.com/dan-sazonov/old-sudga/blob/develop/LICENSE)
 ![OpenSource](https://img.shields.io/badge/Open%20Source-%E2%99%A5-red)
+[![Code style: Airbnb](https://img.shields.io/badge/code%20style-Airbnb-ff385c)](https://github.com/airbnb/javascript)
 [![Front‑End_Checklist followed](https://img.shields.io/badge/Front‑End_Checklist-followed-brightgreen.svg)](https://github.com/thedaviddias/Front-End-Checklist/)
 [![Issues](https://img.shields.io/github/issues/dan-sazonov/old-sudga)](https://github.com/dan-sazonov/old-sudga/issues)
 [![Pull Requests](https://img.shields.io/github/issues-pr/dan-sazonov/old-sudga)](https://github.com/dan-sazonov/old-sudga/pulls)
