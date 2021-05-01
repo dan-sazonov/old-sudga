@@ -23,6 +23,8 @@ const debug = {
   showCookieAlert: false,
 };
 
+// VK.Widgets.Comments("vk_comments", {limit: 5, attach: "*"}); // todo вынести в отдельный модуль
+
 $(document).ready(() => {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
