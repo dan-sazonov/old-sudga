@@ -16,10 +16,14 @@
             <h4 class="alert-heading">Все работает!</h4>
             <span id="from-jquery"></span>
         </div>
+        <div id="vk_comments"></div>
     </div>
 </main>
 
 @@include('components/_footer.html')
+<script type="text/javascript">
+  VK.Widgets.Comments("vk_comments", {limit: 5, attach: "*"});
+</script>
 <script src="js/main.js"></script>
 
 </body>
