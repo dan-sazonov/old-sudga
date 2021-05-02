@@ -1,4 +1,5 @@
 import 'airbnb-browser-shims';
+import {vkInit} from './vk';
 import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
@@ -21,19 +22,22 @@ const date = new Date();
 const currentYear = date.getFullYear();
 const debug = {
   showCookieAlert: false,
+  showVkWidget: true
 };
-
-// VK.Widgets.Comments("vk_comments", {limit: 5, attach: "*"}); // todo вынести в отдельный модуль
+export {debug};
 
 $(document).ready(() => {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
+
+  vkInit();
 
   if (!debug.showCookieAlert) {
     $('.cookie-alert').removeClass('d-flex').addClass('hidden');
   }
 
   $('.cur-year').text(currentYear);
+
   function showAside() {
     // показывает сайдбар и сворачивает форму поиска
     hideSearchForm();
