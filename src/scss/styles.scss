@@ -45,7 +45,24 @@ a {
 .vk-comments-debug {
   width: 100%;
   height: 10rem;
+  margin: .5rem 0 1rem;
   background-color: rgb(87,87,87);
+}
+
+#vk_comments_land {
+  width: 100%;
+  text-align: center;
+  color: $main-semi-light;
+  margin: 1rem 0;
+  p span, i {
+    color: $main;
+  }
+  p span {
+    font-weight: $medium;
+  }
+  i {
+    font-size: 3.5rem;
+  }
 }
 
 // общие элементы
