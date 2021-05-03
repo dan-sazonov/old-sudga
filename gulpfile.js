@@ -21,7 +21,7 @@ const path = {
     css: `${sourceFolder  }/scss/**/*.scss`,
     ico: [`${sourceFolder  }/ico/*.+(png|jpg|gif|ico|svg|webp)`, `${sourceFolder  }/favicon.ico`],
     img: `${sourceFolder  }/**/*.+(png|jpg|gif|ico|svg|webp)`,
-    js: `${sourceFolder  }js/main.js`,
+    js: `${sourceFolder  }/**/*.js`,
   },
   scripts: {
     main: `${sourceFolder  }/js/main.js`,
@@ -136,7 +136,7 @@ gulp.task('watchFiles', () => {
   gulp.watch(path.watch.html, html);
   gulp.watch(path.watch.css, css);
   gulp.watch(path.watch.img, images);
-  gulp.watch(path.scripts.main, js);
+  gulp.watch(path.watch.js, js);
 });
 
 gulp.task('clean', () => del(path.clean));
