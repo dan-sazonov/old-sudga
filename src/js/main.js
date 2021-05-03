@@ -1,7 +1,4 @@
 import 'airbnb-browser-shims';
-import {vkInit} from './vk';
-import {debug} from './config';
-
 import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
@@ -15,6 +12,9 @@ import 'bootstrap/js/dist/alert';
 // import 'bootstrap/js/dist/tab';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
+
+import vkInit from './vk';
+import debug from './config';
 
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
@@ -34,6 +34,13 @@ $(document).ready(() => {
   }
 
   $('.cur-year').text(currentYear);
+
+  function hideSearchForm() {
+    // сворачивает форму поиска
+    $(searchForm).addClass('hidden').removeClass('search_active');
+    $('.logo').removeClass('hidden');
+    $(searchBtn).removeClass('hidden');
+  }
 
   function showAside() {
     // показывает сайдбар и сворачивает форму поиска
@@ -56,13 +63,6 @@ $(document).ready(() => {
     setTimeout(() => {
       $(searchForm).addClass('search_active');
     }, 20);
-  }
-
-  function hideSearchForm() {
-    // сворачивает форму поиска
-    $(searchForm).addClass('hidden').removeClass('search_active');
-    $('.logo').removeClass('hidden');
-    $(searchBtn).removeClass('hidden');
   }
 
   $(asideShowBtn).click(showAside);

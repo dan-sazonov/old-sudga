@@ -1,8 +1,9 @@
 import * as $ from 'jquery';
-import {debug} from './config';
+import debug from './config';
 
 function vkInit() {
   if (debug.showVkWidget && (typeof VK !== 'undefined')) {
+    /* global VK */
     VK.Widgets.Comments('vk_comments', {limit: 5, attach: '*'});
   } else if (debug.showVkWidget) {
     $('#vk_comments').addClass('hidden');
@@ -12,4 +13,4 @@ function vkInit() {
   }
 }
 
-export {vkInit};
+export default vkInit;

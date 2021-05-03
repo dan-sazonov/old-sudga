@@ -3,4 +3,4 @@ const debug = {
   showVkWidget: true
 };
 
-export {debug};
+export default debug;
