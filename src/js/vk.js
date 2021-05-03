@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import {debug} from './main';
+import {debug} from './config';
 
 function vkInit() {
   if (debug.showVkWidget && (typeof VK !== 'undefined')) {

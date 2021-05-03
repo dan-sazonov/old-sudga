@@ -1,5 +1,7 @@
 import 'airbnb-browser-shims';
 import {vkInit} from './vk';
+import {debug} from './config';
+
 import * as $ from 'jquery';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
@@ -20,11 +22,6 @@ const searchBtn = '.header__search-btn';
 const searchForm = '.search';
 const date = new Date();
 const currentYear = date.getFullYear();
-const debug = {
-  showCookieAlert: false,
-  showVkWidget: true
-};
-export {debug};
 
 $(document).ready(() => {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
