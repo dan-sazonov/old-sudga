@@ -10,16 +10,19 @@
     padding-top: .5rem;
     margin-bottom: 0;
   }
+
   .article__author {
     color: $main;
     font-size: 0.875rem;
     font-weight: $medium;
     padding-left: .75rem;
   }
+
   .article__author-name {
     text-transform: capitalize;
     margin-right: 10%;
   }
+
   .article {
     ul {
       padding-left: 0;
@@ -27,29 +30,36 @@
       padding-bottom: .5rem;
       margin: 0;
     }
-    li {
-      list-style-type: none;
-    }
+
     .article__social {
       font-size: 1.2rem;
+
       span, .article__copyright {
         color: $main;
       }
+
       span {
         padding-left: .6rem;
         font-weight: $medium;
       }
+
       button {
         color: $main-dark;
         background-color: inherit;
         border: none;
       }
     }
+
     .article__action {
       width: 100%;
       border-top: 1px solid $main-light;
       border-bottom: 1px solid $main-light;
+
+      li {
+        list-style-type: none;
+      }
     }
+
     .article__action_xs {
       position: relative;
       width: 100vw;
@@ -57,22 +67,55 @@
       padding-left: 15px;
       padding-right: 15px;
     }
+
     .article__copyright {
       i {
         font-size: 1.6rem;
         margin-right: .5rem;
       }
+
       i:last-child {
         margin-right: 0;
       }
+
       .cc-icons {
         margin-top: .56rem;
         text-align: center;
       }
+
       a {
         color: $main-semi-light;
         font-size: 1rem;
         text-decoration: underline;
+      }
+    }
+
+    .article__popular {
+      h3 {
+        font-weight: $medium;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      li {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1.125rem;
+        margin-bottom: 0;
+      }
+
+      span {
+        color: $main;
+        padding-left: .5rem;
+        padding-right: 2rem;
+        font-weight: $medium;
+      }
+
+      span:last-child {
+        padding-right: 0;
       }
     }
   }
