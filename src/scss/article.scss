@@ -23,10 +23,57 @@
   .article {
     ul {
       padding-left: 0;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
       margin: 0;
     }
     li {
       list-style-type: none;
+    }
+    .article__social {
+      font-size: 1.2rem;
+      span, .article__copyright {
+        color: $main;
+      }
+      span {
+        padding-left: .6rem;
+        font-weight: $medium;
+      }
+      button {
+        color: $main-dark;
+        background-color: inherit;
+        border: none;
+      }
+    }
+    .article__action {
+      width: 100%;
+      border-top: 1px solid $main-light;
+      border-bottom: 1px solid $main-light;
+    }
+    .article__action_xs {
+      position: relative;
+      width: 100vw;
+      right: 15px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .article__copyright {
+      i {
+        font-size: 1.6rem;
+        margin-right: .5rem;
+      }
+      i:last-child {
+        margin-right: 0;
+      }
+      .cc-icons {
+        margin-top: .56rem;
+        text-align: center;
+      }
+      a {
+        color: $main-semi-light;
+        font-size: 1rem;
+        text-decoration: underline;
+      }
     }
   }
 }
