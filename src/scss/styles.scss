@@ -72,6 +72,17 @@ a {
   }
 }
 
+.btn-outline-success:hover {
+  background-color: $main-semi-dark;
+  border-color: $main-semi-dark;
+  color: $main-ultralight;
+}
+
+.form-control:focus {
+  border-color: RGBA(42, 24, 19, 0.88);
+  box-shadow: 0 0 0 .2rem RGBA(42, 24, 19, .25);
+}
+
 // общие элементы
 .aside__shadow {
   position: absolute;
@@ -97,6 +108,11 @@ a {
   font-weight: bold;
   font-size: 1.5rem;
   color: $white;
+}
+
+.logo:hover {
+  color: $white;
+  text-decoration: none;
 }
 
 .header {
