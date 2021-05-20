@@ -166,8 +166,8 @@ a {
   height: 2rem;
 }
 
-.search__input {
-  width: 58vw !important;
+header #search-main .search__input {
+  width: 58vw;
   border: solid 2px $main-light;
   color: $main;
 }
@@ -324,8 +324,12 @@ address {
 
 
 // media
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .header .logo {
     margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
-}
+  header #search-main .search__input {
+    width: 38vw;
+}}
