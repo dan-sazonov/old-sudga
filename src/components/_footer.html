@@ -1,6 +1,7 @@
 <footer class="container-fluid footer sticky-bottom">
     <div class="container">
-        <div class="col w-100 flex-column">
+        <!-- для xs: -->
+        <div class="col w-100 flex-column d-flex d-md-none">
             <nav>
                 <ul class="nav__links nav__links_primary d-flex">
                     <li class="links__item"><a href="/404.html">О нас</a></li>
@@ -20,6 +21,43 @@
       <a href="https://github.com/dan-sazonov" title="Github: @dan-sazonov"><i class="fab fa-github"></i></a>
       <a href="mailto:p-294803@yandex.ru" title="p-294803@yandex.ru"><i class="far fa-envelope"></i></a>
     </span></span>
+            </div>
+        </div>
+        <!-- для md: -->
+        <div class="d-none d-md-block d-lg-none">
+            <div class="row row_first">
+                <div class="col item_center"><img src="img/logo-horizontal-white.svg" alt="Логотип Давняя Суджа"></div>
+                <div class="col">
+                    <nav>
+                        <ul class="nav__links nav__links_md">
+                            <li><a href="404.html">О нас</a></li>
+                            <li><a href="404.html">Фото давней Суджи</a></li>
+                            <li><a href="404.html">Участвовать в развитии проекта</a></li>
+                            <li><a href="404.html">Связаться с нами</a></li>
+                            <li><a href="404.html">Использование материалов</a></li>
+                            <li><a href="404.html">Бот в Telegram</a></li>
+                            <li><a href="404.html">Репозиторий на Github</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <ul class="nav__links nav__links_footer d-flex flex-row  flex-wrap">
+                        <li><a href="LICENSE.txt">Лицензия</a></li>
+                        <li><a href="/404.html">Пользовательское соглашение</a></li>
+                        <li><a href="/404.html">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <address><span>Made with ❤️ by Dan Sazonov in Sudga, <wbr>2020—<span
+                            class="cur-year d-inline">2020</span></span></address>
+                    <span class="author__social align-self-end d-flex"><span class="wrap">
+      <a href="https://t.me/dan_sazonov" title="@dan_sazonov"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://github.com/dan-sazonov" title="Github: @dan-sazonov"><i class="fab fa-github"></i></a>
+      <a href="mailto:p-294803@yandex.ru" title="p-294803@yandex.ru"><i class="far fa-envelope"></i></a>
+    </span></span>
+                </div>
             </div>
         </div>
     </div>

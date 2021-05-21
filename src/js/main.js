@@ -28,7 +28,7 @@ const breakpoints = {
   'xl': 1200
 };
 const realWidth = window.innerWidth;
-const realHeight = window.innerHeight;
+// const realHeight = window.innerHeight;
 
 $(document).ready(() => {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
