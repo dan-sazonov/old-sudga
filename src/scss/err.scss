@@ -46,3 +46,16 @@
     font-size: 1.1rem;
   }
 }
+
+.search__input {
+  width: 70%;
+}
+
+@media (min-width: 768px) {
+  .err-search {
+    padding-top: -3rem;
+  }
+  form .search__input.search__input_md {
+    width: 50%;
+  }
+}
