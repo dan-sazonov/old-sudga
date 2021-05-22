@@ -65,11 +65,11 @@ $(document).ready(() => {
 
   function showSearchForm() {
     // показывает форму поиска
-    if (realWidth < breakpoints.md) {
+    if (realWidth < breakpoints.sm) {
       $('.logo').addClass('hidden');
     }
     $(searchBtn).addClass('hidden');
-    $('.nav').addClass('hidden').removeClass('d-md-flex');
+    $('.nav').addClass('hidden').removeClass('d-sm-flex');
     $(searchForm).removeClass('hidden');
     setTimeout(() => {
       $(searchForm).addClass('search_active');
