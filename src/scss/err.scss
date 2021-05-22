@@ -51,11 +51,27 @@
   width: 70%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 576px) {
   .err-search {
     padding-top: -3rem;
   }
   form .search__input.search__input_md {
     width: 50%;
+    min-width: 360px;
+  }
+}
+
+@media (max-height: 800px) {
+  .err-emoji {
+    padding: .5rem 0 1rem;
+  }
+  .err-title p {
+    padding-bottom: .5rem;
+  }
+  .err-search {
+    padding-bottom: 2rem;
+  }
+  .err-link {
+    padding-bottom: 1rem;
   }
 }

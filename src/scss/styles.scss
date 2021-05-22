@@ -331,7 +331,7 @@ address {
     width: 40vw;
   }
   .header .logo {
-    margin-left: 1rem;
+    margin-left: 2rem;
   }
   .nav__links li {
     line-height: 1.6;
@@ -374,7 +374,6 @@ address {
 
 @media (min-width: 768px) {
   .header .logo {
-    margin-left: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
