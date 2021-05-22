@@ -59,19 +59,25 @@
     width: 50%;
     min-width: 360px;
   }
+  .err-main .wrap .err-emoji {
+    padding-bottom: 3rem;
+  }
 }
 
 @media (max-height: 800px) {
   .err-emoji {
+    padding-bottom: 1rem;
+  }
+  .err-emoji_404 {
     padding: .5rem 0 1rem;
   }
-  .err-title p {
+  .err-title_404 p {
     padding-bottom: .5rem;
   }
-  .err-search {
+  .err-search_404 {
     padding-bottom: 2rem;
   }
-  .err-link {
+  .err-link_404 {
     padding-bottom: 1rem;
   }
 }

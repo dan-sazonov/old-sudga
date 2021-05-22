@@ -11,11 +11,18 @@
 @@include('components/_header.html')
 
 <main class="d-flex flex-fill err-main">
-    <div class="container d-flex flex-column justify-content-around flex-fill">
-        <div class="err-emoji d-flex flex-column"><i class="far fa-frown-open err-i"></i></div>
-        <div class="err-title">
+    <div class="container-xl d-flex flex-column justify-content-around flex-fill">
+        <div class="err-emoji d-flex flex-column d-md-none d-lg-block"><i class="far fa-frown-open err-i"></i></div>
+        <div class="err-title d-md-none d-lg-block">
             <h1>Что-то пошло не так...</h1>
             <p class="err-p"><a href="404.html">Расскажите нам</a>, как вы попали на эту страницу, и мы всё исправим</p>
+        </div>
+        <div class="wrap d-none d-md-block d-lg-none">
+            <div class="err-emoji d-flex flex-column"><i class="far fa-frown-open err-i"></i></div>
+            <div class="err-title">
+                <h1>Что-то пошло не так...</h1>
+                <p class="err-p"><a href="404.html">Расскажите нам</a>, как вы попали на эту страницу, и мы всё исправим</p>
+            </div>
         </div>
     </div>
 </main>
