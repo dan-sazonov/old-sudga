@@ -332,6 +332,8 @@ address {
   }
   .header .logo {
     margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
   .nav__links li {
     line-height: 1.6;
@@ -373,10 +375,6 @@ address {
 }
 
 @media (min-width: 768px) {
-  .header .logo {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-  }
   header #search-main .search__input {
     width: 38vw;
   }
