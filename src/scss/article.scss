@@ -38,6 +38,10 @@
         color: $main;
       }
 
+      .article__copyright {
+        flex-direction: column;
+      }
+
       span {
         padding-left: .6rem;
         font-weight: $medium;
@@ -47,6 +51,16 @@
         color: $main-dark;
         background-color: inherit;
         border: none;
+      }
+
+      .typo-alert {
+        font-size: .875rem;
+        color: $main-semi-light;
+      }
+
+      .article__social_footer {
+        display: flex;
+        justify-content: space-between;
       }
     }
 

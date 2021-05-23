@@ -326,6 +326,8 @@ address {
 
 
 // media
+
+// начиная с sm
 @media (min-width: 576px) {
   header #search-main .search__input {
     width: 40vw;
@@ -372,8 +374,36 @@ address {
       margin-right: 1rem;
     }
   }
+  .main .article .article__action_xs {
+    position: static;
+    width: 100%;
+  }
 }
 
+// только sm
+@media (max-width: 767px) and (min-width: 576px) {
+  .main .article {
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 80%;
+  }
+  .article__social_footer {
+    justify-content: center !important;
+  }
+  .article__copyright {
+    flex-direction: row !important;
+
+    a {
+      margin-left: 1rem;
+    }
+  }
+  #vk_comments_land {
+    margin-top: 2rem;
+  }
+}
+
+//начиная с md
 @media (min-width: 768px) {
   header #search-main .search__input {
     width: 38vw;
