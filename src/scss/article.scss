@@ -116,9 +116,10 @@
         margin-bottom: 1rem;
       }
 
-      p {
+      a, p {
         font-size: 1.125rem;
         margin-bottom: 0;
+        color: $main-dark;
       }
 
       span {
