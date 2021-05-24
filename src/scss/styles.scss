@@ -378,6 +378,9 @@ address {
     position: static;
     width: 100%;
   }
+  .popular__item_xs {
+    display: none;
+  }
 }
 
 // только sm
@@ -400,6 +403,9 @@ address {
   }
   #vk_comments_land {
     margin-top: 2rem;
+  }
+  .popular__item_hidden {
+    display: none;
   }
 }
 
