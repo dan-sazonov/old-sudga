@@ -139,3 +139,32 @@
     }
   }
 }
+
+// фиксы виджета яндекса
+.ya-share2__container_shape_round.ya-share2__container_size_l .ya-share2__badge .ya-share2__icon:not(.ya-share2__icon_messenger-contact):not(.ya-share2__icon_more):not(.ya-share2__icon_copy) {
+  background-size: 35px 35px !important;
+}
+
+.ya-share2__list {
+  padding: 0 !important;
+}
+
+.article__share .ya-share2__list {
+  span {
+    padding-left: 0 !important;
+  }
+}
+.ya-share2__container_mobile.ya-share2__container_size_l .ya-share2__icon {
+  height: 46px !important;
+  width: 46px !important;
+}
+div.ya-share2.ya-share2_inited {
+  width: 70%;
+}
+div.ya-share2__container.ya-share2__container_size_l {
+  width: 100%;
+}
+ul.ya-share2__list.ya-share2__list_direction_horizontal {
+  display: flex;
+  justify-content: space-between;
+}
