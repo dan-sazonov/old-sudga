@@ -19,6 +19,8 @@ const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
 const searchForm = '.search';
+const shareBtn = '.toggle-social';
+const shareItem = '.ya-share2__item';
 const date = new Date();
 const currentYear = date.getFullYear();
 const breakpoints = {
@@ -76,7 +78,27 @@ $(document).ready(() => {
     }, 20);
   }
 
+  function showSocialButton() {
+    // показывает кнопки социальных сетей в article__social
+    $('.article__share_primary').addClass('d-none').removeClass('d-flex');
+    $('.article__share').addClass('d-flex').removeClass('d-none');
+    setTimeout(() => {
+      $('.article__share').addClass('article__share_active');
+    }, 20);
+  }
+
+  function hideSocialButton() {
+    // скрывает кнопки социальных сетей
+    $('.article__share').removeClass('article__share_active').removeClass('d-flex');
+    setTimeout(() => {
+      $('.article__share').addClass('d-none');
+    }, 20);
+    $('.article__share_primary').removeClass('d-none').addClass('d-flex');
+  }
+
   $(asideShowBtn).click(showAside);
   $(asideHideBtn).click(hideAside);
   $(searchBtn).click(showSearchForm);
+  $(shareBtn).click(showSocialButton);
+  $(shareItem).click(hideSocialButton);
 });
