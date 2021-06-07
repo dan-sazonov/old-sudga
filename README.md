@@ -32,7 +32,8 @@ _Разработка идет на ветке `develop`, для удобств�
 - туристы, представители туристического бизнеса
 
 ## Контрольные точки, todo
-- [Канбан](https://github.com/dan-sazonov/old-sudga/projects/1)
+- [Канбан - бета версия](https://github.com/dan-sazonov/old-sudga/projects/1)
+- [Канбан - финалка](https://github.com/dan-sazonov/old-sudga/projects/2)
 - [Логобук](/design/logobook.md)
 - [Макет сайта](https://www.figma.com/file/5XTgdbaoxZckt15BIIGF2j/%D0%94%D0%B0%D0%B2%D0%BD%D1%8F%D1%8F-%D0%A1%D1%83%D0%B4%D0%B6%D0%B0-%D0%BC%D0%B0%D0%BA%D0%B5%D1%82?node-id=0%3A1)
 - [X] Создание скетчей сайта, обсуждение ТЗ
