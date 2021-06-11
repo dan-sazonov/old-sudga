@@ -1,5 +1,6 @@
 import 'airbnb-browser-shims';
 import * as $ from 'jquery';
+import './jquery.tap'
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import vkInit from './vk';
@@ -31,6 +32,8 @@ const breakpoints = {
 };
 const realWidth = window.innerWidth;
 // const realHeight = window.innerHeight;
+
+let shownSocialButton = false;
 
 $(document).ready(() => {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
@@ -78,8 +81,13 @@ $(document).ready(() => {
     }, 20);
   }
 
-  function showSocialButton() {
+  function toggleSocialButton() {
     // показывает кнопки социальных сетей в article__social
+    if (shownSocialButton) {
+      hideSocialButton();
+      return
+    }
+    shownSocialButton = true;
     $('.article__share_primary').addClass('d-none').removeClass('d-flex');
     $('.article__share').addClass('d-flex').removeClass('d-none');
     setTimeout(() => {
@@ -89,16 +97,19 @@ $(document).ready(() => {
 
   function hideSocialButton() {
     // скрывает кнопки социальных сетей
+    shownSocialButton = false;
     $('.article__share').removeClass('article__share_active').removeClass('d-flex');
     setTimeout(() => {
       $('.article__share').addClass('d-none');
     }, 20);
-    $('.article__share_primary').removeClass('d-none').addClass('d-flex');
+    setTimeout( () => {
+      $('.article__share_primary').removeClass('d-none').addClass('d-flex');
+    }, 20);
   }
 
   $(asideShowBtn).click(showAside);
   $(asideHideBtn).click(hideAside);
   $(searchBtn).click(showSearchForm);
-  $(shareBtn).click(showSocialButton);
-  $(shareItem).click(hideSocialButton);
+  $(shareBtn).click(toggleSocialButton);
+  $(shareItem).on('tap', hideSocialButton);
 });

@@ -182,3 +182,8 @@ ul.ya-share2__list.ya-share2__list_direction_horizontal {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 576px) {
+  div.ya-share2.ya-share2_inited {
+    width: 100%;
+  }
+}
