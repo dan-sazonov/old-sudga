@@ -1,20 +1,20 @@
 import * as jQuery from 'jquery';
 
 (function($, specialEventName) {
-  'use strict';
+  
 
   /**
    * Native event names for creating custom one.
    *
    * @type {Object}
    */
-  var nativeEvent = Object.create(null);
+  const nativeEvent = Object.create(null);
   /**
    * Get current time.
    *
    * @return {Number}
    */
-  var getTime = function() {
+  const getTime = function() {
     return new Date().getTime();
   };
 
@@ -29,9 +29,9 @@ import * as jQuery from 'jquery';
   }
 
   $.event.special[specialEventName] = {
-    setup: function(data, namespaces, eventHandle) {
-      var $element = $(this);
-      var eventData = {};
+    setup(data, namespaces, eventHandle) {
+      const $element = $(this);
+      const eventData = {};
 
       $element
         // Remove all handlers that were set for an original event.
@@ -40,11 +40,11 @@ import * as jQuery from 'jquery';
         .on(nativeEvent.original, false)
         // Split original event by two different and collect an information
         // on every phase.
-        .on(nativeEvent.start + ' ' + nativeEvent.end, function(event) {
+        .on(`${nativeEvent.start  } ${  nativeEvent.end}`, (event) => {
           // Handle the event system of touchscreen devices.
           eventData.event = event.originalEvent.changedTouches ? event.originalEvent.changedTouches[0] : event;
         })
-        .on(nativeEvent.start, function(event) {
+        .on(nativeEvent.start, (event) => {
           // Stop execution if an event is simulated.
           if (event.which && event.which !== 1) {
             return;
@@ -87,8 +87,8 @@ import * as jQuery from 'jquery';
         });
     },
 
-    remove: function() {
-      $(this).off(nativeEvent.start + ' ' + nativeEvent.end);
+    remove() {
+      $(this).off(`${nativeEvent.start  } ${  nativeEvent.end}`);
     }
   };
 

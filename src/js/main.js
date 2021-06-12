@@ -1,6 +1,6 @@
 import 'airbnb-browser-shims';
 import * as $ from 'jquery';
-import './jquery.tap'
+import './jquery.tap';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import vkInit from './vk';
@@ -85,7 +85,7 @@ $(document).ready(() => {
     // показывает кнопки социальных сетей в article__social
     if (shownSocialButton) {
       hideSocialButton();
-      return
+      return;
     }
     shownSocialButton = true;
     $('.article__share_primary').addClass('d-none').removeClass('d-flex');
