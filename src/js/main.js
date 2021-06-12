@@ -16,6 +16,7 @@ import debug from './config';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
+const clickEvent = $.isFunction($.fn.tap) ? 'tap' : 'click';
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
@@ -107,9 +108,9 @@ $(document).ready(() => {
     }, 20);
   }
 
-  $(asideShowBtn).click(showAside);
-  $(asideHideBtn).click(hideAside);
-  $(searchBtn).click(showSearchForm);
-  $(shareBtn).click(toggleSocialButton);
-  $(shareItem).on('tap', hideSocialButton);
+  $(asideShowBtn).on(clickEvent, showAside);
+  $(asideHideBtn).on(clickEvent, hideAside);
+  $(searchBtn).on('click', showSearchForm); // fixme tap по батону вызывает перезагрузку страницы, хз почему
+  $(shareBtn).on(clickEvent, toggleSocialButton);
+  $(shareItem).on(clickEvent, hideSocialButton);
 });
