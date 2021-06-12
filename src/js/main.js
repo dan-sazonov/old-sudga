@@ -5,6 +5,7 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import vkInit from './vk';
 import debug from './config';
+import './err-landings'
 // import 'bootstrap/js/dist/button';
 // import 'bootstrap/js/dist/carousel';
 // import 'bootstrap/js/dist/collapse';
