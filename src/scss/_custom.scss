@@ -77,3 +77,26 @@ $font-family-poster: 'Fakedes Outline', SFMono-Regular, Menlo, Monaco, Consolas,
   font-size: 1.125rem;
   font-weight: $medium;
 }
+
+// дефолты
+
+.btn-outline-success:hover {
+  background-color: $main-semi-dark;
+  border-color: $main-semi-dark;
+  color: $main-ultralight;
+}
+
+.btn-outline-success.focus, .btn-outline-success:focus {
+  box-shadow: 0 0 0 .2rem rgba(165, 138, 131, .5);
+}
+
+.btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active, .show > .btn-outline-success.dropdown-toggle {
+  color: #fff;
+  background-color: rgba(42, 24, 19, 0.82);
+  border-color: rgba(42, 24, 19, 0.82);
+}
+
+.form-control:focus {
+  border-color: rgba(42, 24, 19, 0.88);
+  box-shadow: 0 0 0 .2rem rgba(42, 24, 19, .25);
+}
