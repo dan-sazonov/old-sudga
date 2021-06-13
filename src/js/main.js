@@ -6,11 +6,11 @@ import 'bootstrap/js/dist/alert';
 import vkInit from './vk';
 import debug from './config';
 import './err-landings'
-// import 'bootstrap/js/dist/button';
+import 'bootstrap/js/dist/button';
 // import 'bootstrap/js/dist/carousel';
 // import 'bootstrap/js/dist/collapse';
 // import 'bootstrap/js/dist/dropdown';
-// import 'bootstrap/js/dist/modal';
+import 'bootstrap/js/dist/modal';
 // import 'bootstrap/js/dist/popover';
 // import 'bootstrap/js/dist/scrollspy';
 // import 'bootstrap/js/dist/tab';
@@ -108,6 +108,11 @@ $(document).ready(() => {
       $('.article__share_primary').removeClass('d-none').addClass('d-flex');
     }, 20);
   }
+
+  $('.featureLanding').attr({
+    'data-toggle': 'modal',
+    'data-target': '#modalLanding'
+  });
 
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);

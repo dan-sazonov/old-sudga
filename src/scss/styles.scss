@@ -309,6 +309,26 @@ address {
   }
 }
 
+.modal {
+  .btn-primary {
+    border: solid 2px #a58a83;
+    background-color: $main;
+    color: $main-ultralight;
+    font-weight: $medium;
+    &:hover {
+      background-color: $main-semi-dark;
+      border-color: $main;
+    }
+    &:active {
+      background-color: $main!important;
+      border-color: $main!important;
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px rgba(42, 24, 19, .5);
+    }
+  }
+}
+
 // стили для страниц:
 @import "err";
 @import "article";
