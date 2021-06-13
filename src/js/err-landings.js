@@ -3,7 +3,7 @@ const errPage = `
   </div>
 `;
 
-const errModal = `
-  <div class="err-modal">
+const errBlock = `
+  <div>
   </div>
 `;

@@ -114,6 +114,11 @@ $(document).ready(() => {
     'data-target': '#modalLanding'
   });
 
+  if (!debug.showPopularArticle) {
+    $('.popular__list').addClass('d-none').removeClass('row');
+    $('.popular__landing-block').removeClass('d-none');
+  }
+
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
   $(searchBtn).on('click', showSearchForm); // fixme tap по батону вызывает перезагрузку страницы, хз почему
