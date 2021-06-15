@@ -315,14 +315,17 @@ address {
     background-color: $main;
     color: $main-ultralight;
     font-weight: $medium;
+
     &:hover {
       background-color: $main-semi-dark;
       border-color: $main;
     }
+
     &:active {
-      background-color: $main!important;
-      border-color: $main!important;
+      background-color: $main !important;
+      border-color: $main !important;
     }
+
     &:focus {
       box-shadow: 0 0 0 2px rgba(42, 24, 19, .5);
     }
@@ -361,6 +364,8 @@ address {
     }
   }
   .footer {
+    padding-bottom: 1rem;
+
     address span.cur-year {
       font-size: .9rem;
     }
@@ -431,9 +436,11 @@ address {
     .nav {
       width: 35%;
     }
+
     .search {
-      opacity: 1!important;
+      opacity: 1 !important;
     }
+
     #search-main .search__input {
       width: auto;
     }
