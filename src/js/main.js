@@ -5,7 +5,7 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import vkInit from './vk';
 import debug from './config';
-import './err-landings'
+import {landPage, landBlock} from './err-landings';
 import 'bootstrap/js/dist/button';
 // import 'bootstrap/js/dist/carousel';
 // import 'bootstrap/js/dist/collapse';
@@ -42,10 +42,6 @@ $(document).ready(() => {
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
   vkInit();
-
-  if (!debug.showCookieAlert) {
-    $('.cookie-alert').removeClass('d-flex').addClass('hidden');
-  }
 
   $('.cur-year').text(currentYear);
 
@@ -104,21 +100,28 @@ $(document).ready(() => {
     setTimeout(() => {
       $('.article__share').addClass('d-none');
     }, 20);
-    setTimeout( () => {
+    setTimeout(() => {
       $('.article__share_primary').removeClass('d-none').addClass('d-flex');
     }, 20);
   }
 
+  // меняем блоки на заглушки, задаем модальные окна
   $('.featureLanding').attr({
     'data-toggle': 'modal',
     'data-target': '#modalLanding'
   });
+  $('.landingBlock').html(landBlock);
 
   if (!debug.showPopularArticle) {
     $('.popular__list').addClass('d-none').removeClass('row');
     $('.popular__landing-block').removeClass('d-none');
   }
 
+  if (!debug.showCookieAlert) {
+    $('.cookie-alert').removeClass('d-flex').addClass('hidden');
+  }
+
+  // обработчики кликов
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
   $(searchBtn).on('click', showSearchForm); // fixme tap по батону вызывает перезагрузку страницы, хз почему

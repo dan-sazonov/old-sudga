@@ -1,9 +1,10 @@
-const errPage = `
-  <div class="err-page__main">
+export const landPage = `
+  <div class="land-page__main">
   </div>
 `;
 
-const errBlock = `
-  <div>
+export const landBlock = `
+  <div class="land-block">
+  заглушка
   </div>
 `;
