@@ -418,9 +418,24 @@ address {
   }
 }
 
-//начиная с md
+// начиная с md
 @media (min-width: 768px) {
   header #search-main .search__input {
     width: 38vw;
+  }
+}
+
+// начиная с lg
+@media (min-width: 992px) {
+  .header {
+    .nav {
+      width: 35%;
+    }
+    .search {
+      opacity: 1!important;
+    }
+    #search-main .search__input {
+      width: auto;
+    }
   }
 }

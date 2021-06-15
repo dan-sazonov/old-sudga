@@ -121,6 +121,15 @@ $(document).ready(() => {
     $('.cookie-alert').removeClass('d-flex').addClass('hidden');
   }
 
+  // для адаптирования
+  if (realWidth >= breakpoints.lg) {
+    $(searchBtn).addClass('hidden');
+    $(searchForm).removeClass('hidden');
+    setTimeout(() => {
+      $(searchForm).addClass('search_active');
+    }, 20);
+  }
+
   // обработчики кликов
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
