@@ -53,7 +53,7 @@ a {
   background-color: rgb(87, 87, 87);
 }
 
-#vk_comments_land {
+#vk_comments_land, .land-block {
   width: 100%;
   text-align: center;
   color: $main-semi-light;
@@ -65,10 +65,16 @@ a {
 
   p span {
     font-weight: $medium;
+    font-size: 1rem !important;
   }
 
   i {
     font-size: 3.5rem;
+  }
+
+  p {
+    font-size: 1rem !important;
+    color: $main-semi-light !important;
   }
 }
 
@@ -415,7 +421,7 @@ address {
       margin-left: 1rem;
     }
   }
-  #vk_comments_land {
+  #vk_comments_land, .land-block {
     margin-top: 2rem;
   }
   .popular__item_hidden {
