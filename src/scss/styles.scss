@@ -445,4 +445,9 @@ address {
       width: auto;
     }
   }
+  .footer {
+    .nav__item_hidden {
+      display: none;
+    }
+  }
 }
