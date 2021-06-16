@@ -1,6 +1,7 @@
 import 'airbnb-browser-shims';
 import * as $ from 'jquery';
 import './jquery.tap';
+import 'jquery-touchswipe';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import vkInit from './vk';
@@ -36,6 +37,7 @@ const realWidth = window.innerWidth;
 // const realHeight = window.innerHeight;
 
 let shownSocialButton = false;
+let shownAside = false;
 
 $(document).ready(() => {
   console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
@@ -58,12 +60,14 @@ $(document).ready(() => {
     hideSearchForm();
     $('.aside').toggleClass('aside_open');
     $(asideHideBtn).toggleClass('aside__shadow_active');
+    shownAside = true;
   }
 
   function hideAside() {
     // скрывает сайдбар
     $('.aside').toggleClass('aside_open');
     $(asideHideBtn).toggleClass('aside__shadow_active');
+    shownAside = false;
   }
 
   function showSearchForm() {
@@ -133,6 +137,16 @@ $(document).ready(() => {
   // обработчики кликов
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
+  $('body').swipe({
+    swipe: function (event, direction) {
+      if (direction === 'right' && !shownAside) {
+        showAside();
+      }
+      if (direction === 'left' && shownAside) {
+        hideAside();
+      }
+    }
+  });
   $(searchBtn).on('click', showSearchForm); // fixme tap по батону вызывает перезагрузку страницы, хз почему
   $(shareBtn).on(clickEvent, toggleSocialButton);
   $(shareItem).on(clickEvent, hideSocialButton);
