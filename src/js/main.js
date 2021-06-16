@@ -18,7 +18,6 @@ import 'bootstrap/js/dist/modal';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
-const clickEvent = $.isFunction($.fn.tap) ? 'tap' : 'click';
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
@@ -35,6 +34,8 @@ const breakpoints = {
 };
 const realWidth = window.innerWidth;
 // const realHeight = window.innerHeight;
+const isTouch = realWidth < breakpoints.lg;
+const clickEvent = $.isFunction($.fn.tap) && isTouch ? 'tap' : 'click';
 
 let shownSocialButton = false;
 let shownAside = false;
@@ -126,7 +127,7 @@ $(document).ready(() => {
   }
 
   // для адаптирования
-  if (realWidth >= breakpoints.lg) {
+  if (!isTouch) {
     $(searchBtn).addClass('hidden');
     $(searchForm).removeClass('hidden');
     setTimeout(() => {
