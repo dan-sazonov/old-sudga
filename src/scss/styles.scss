@@ -346,7 +346,7 @@ address {
 // media
 
 // начиная с sm
-@media (min-width: 576px) {
+@include media-breakpoint-up(sm) {
   header #search-main .search__input {
     width: 40vw;
   }
@@ -404,7 +404,7 @@ address {
 }
 
 // только sm
-@media (max-width: 767px) and (min-width: 576px) {
+@include media-breakpoint-only(sm) {
   .main .article {
     width: 100%;
     padding-right: 0;
@@ -430,14 +430,14 @@ address {
 }
 
 // начиная с md
-@media (min-width: 768px) {
+@include media-breakpoint-up(md) {
   header #search-main .search__input {
     width: 38vw;
   }
 }
 
 // начиная с lg
-@media (min-width: 992px) {
+@include media-breakpoint-up(lg) {
   .header {
     .nav {
       width: 35%;
