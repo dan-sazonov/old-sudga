@@ -429,6 +429,19 @@ address {
   }
 }
 
+// от sm до 632px 
+@media (min-width: 576px) and (max-width: 632px) {
+  .header {
+    nav a {
+      margin-right: 2rem;
+    }
+
+    .logo {
+      margin-left: 1rem;
+    }
+  }
+}
+
 // начиная с md
 @include media-breakpoint-up(md) {
   header #search-main .search__input {
