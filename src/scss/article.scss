@@ -33,6 +33,7 @@
 
     .article__social {
       font-size: 1.2rem;
+      padding: 0;
 
       span, .article__copyright {
         color: $main;
@@ -148,6 +149,22 @@
       margin-right: auto;
     }
   }
+
+  .aside-lg {
+    .aside-lg__contribution {
+      font-size: 1.125rem;
+      text-align: center;
+      border-top: $main-semi-light 1px solid;
+      border-bottom: $main-semi-light 1px solid;
+      margin: 2rem 0 1.5rem;
+      padding: .5rem 0;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+;
 }
 
 // фиксы виджета яндекса
