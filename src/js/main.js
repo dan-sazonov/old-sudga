@@ -139,11 +139,13 @@ $(document).ready(() => {
   $(asideHideBtn).on(clickEvent, hideAside);
   $('body').swipe({
     swipe: function (event, direction) {
-      if (direction === 'right' && !shownAside) {
-        showAside();
-      }
-      if (direction === 'left' && shownAside) {
-        hideAside();
+      if (realWidth <= breakpoints.sm) {
+        if (direction === 'right' && !shownAside) {
+          showAside();
+        }
+        if (direction === 'left' && shownAside) {
+          hideAside();
+        }
       }
     }
   });
