@@ -138,9 +138,9 @@ $(document).ready(() => {
   // обработчики кликов
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
-  $('body').swipe({
-    swipe: function (event, direction) {
-      if (realWidth <= breakpoints.sm) {
+  if (isTouch && realWidth <= breakpoints.sm) { // на не сенсорных устр-вах обработчик свайпа не дает выделить текст
+    $('body').swipe({
+      swipe: function (event, direction) {
         if (direction === 'right' && !shownAside) {
           showAside();
         }
@@ -148,8 +148,8 @@ $(document).ready(() => {
           hideAside();
         }
       }
-    }
-  });
+    });
+  }
   $(searchBtn).on('click', showSearchForm); // fixme tap по батону вызывает перезагрузку страницы, хз почему
   $(shareBtn).on(clickEvent, toggleSocialButton);
   $(shareItem).on(clickEvent, hideSocialButton);
