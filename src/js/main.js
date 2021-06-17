@@ -126,6 +126,9 @@ $(document).ready(() => {
     $('.cookie-alert').removeClass('d-flex').addClass('hidden');
   }
 
+  // обнуляем заглушенные счетчики
+  $('.likes__counter, .dislikes__counter, .views__counter').text(0);
+
   // для адаптирования
   if (!isTouch) {
     $(searchBtn).addClass('hidden');
