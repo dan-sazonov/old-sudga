@@ -156,4 +156,7 @@ $(document).ready(() => {
   $(searchBtn).on('click', showSearchForm); // fixme tap по батону вызывает перезагрузку страницы, хз почему
   $(shareBtn).on(clickEvent, toggleSocialButton);
   $(shareItem).on(clickEvent, hideSocialButton);
+  $('.to-print').click(() => {
+    window.print();
+  });
 });

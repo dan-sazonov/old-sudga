@@ -14,7 +14,7 @@
 
     <div class="container-lg article">
         <div class="row">
-            <article class="col-lg-8">
+            <article class="col-lg-8 article__main">
                 <h2>Название этой статьи - несколько слов</h2>
                 <p class="article__author">
                     <span class="article__author-name">давняя суджа</span>
@@ -79,7 +79,15 @@
                     odit
                     officiis provident quas quod ratione sed tempora ullam ut?</p>
             </article>
-            <aside class="col-lg-4 d-none d-lg-block aside-lg">
+            <section class="article__footer_print d-none d-print-flex w-100 justify-content-around">
+                <h1 class="item_center logo">давняя суджа</h1>
+                <div class="article__copyright cc-icons">
+                    <i class="fab fa-creative-commons"></i>
+                    <i class="fab fa-creative-commons-by"></i>
+                    <i class="fab fa-creative-commons-sa"></i>
+                </div>
+            </section>
+            <aside class="col-lg-4 d-none d-lg-block aside-lg d-print-none">
                 <section class="aside-lg__contribution">
                     <p>
                         Хотите принять участие в развитии нашего проекта?
@@ -94,7 +102,7 @@
                 </section>
             </aside>
         </div>
-        <section class="article__social col-lg-8">
+        <section class="article__social col-lg-8 d-print-none">
             <ul class="d-flex justify-content-between article__action article__action_xs article__share_primary">
                 <li class="likes">
                     <button type="button" class="featureLanding"><i class="far fa-thumbs-up"></i>
@@ -112,8 +120,9 @@
                     <button type="button" class="toggle-social"><i class="fas fa-share"></i><span>Поделиться</span>
                     </button>
                 </li>
-                <li class="to-print d-none d-lg-block"><i class="fas fa-print"></i><span><a
-                        href="404.html">Распечатать</a></span></li>
+                <li class="d-none d-lg-block">
+                    <button type="button" class="to-print"><i class="fas fa-print"></i><span>Распечатать</span></button>
+                </li>
             </ul>
             <ul class="d-none justify-content-between article__action article__action_xs article__share">
                 <li class="w-100 d-flex justify-content-center">
@@ -142,7 +151,7 @@
                 </div>
             </div>
         </section>
-        <section class="article__comments col-lg-8">
+        <section class="article__comments col-lg-8 d-print-none">
             <div id="vk_comments"></div>
             <div id="vk_comments_land" class="hidden">
                 <i class="far fa-comments"></i>
@@ -151,7 +160,7 @@
                     защите приватности. Отключите их, и все заработает.</p>
             </div>
         </section>
-        <section class="article__popular d-lg-none">
+        <section class="article__popular d-lg-none d-print-none">
             @@include('components/_POPULAR.html')
         </section>
     </div>

@@ -349,6 +349,19 @@ address {
 
 // media
 
+@media print {
+  .article__main {
+    flex: none;
+    max-width: none;
+    padding: 0;
+    margin-bottom: .5rem;
+  }
+  .article__footer_print {
+    padding-top: .3rem;
+    border-top: 1px solid black;
+  }
+}
+
 // начиная с sm
 @include media-breakpoint-up(sm) {
   header #search-main .search__input {
