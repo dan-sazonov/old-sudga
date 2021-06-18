@@ -4,14 +4,14 @@ import './jquery.tap';
 import 'jquery-touchswipe';
 import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
+import 'bootstrap/js/dist/button';
+import 'bootstrap/js/dist/modal';
 import vkInit from './vk';
 import debug from './config';
 import {landBlock} from './landings';
-import 'bootstrap/js/dist/button';
 // import 'bootstrap/js/dist/carousel';
 // import 'bootstrap/js/dist/collapse';
 // import 'bootstrap/js/dist/dropdown';
-import 'bootstrap/js/dist/modal';
 // import 'bootstrap/js/dist/popover';
 // import 'bootstrap/js/dist/scrollspy';
 // import 'bootstrap/js/dist/tab';
@@ -41,7 +41,7 @@ let shownSocialButton = false;
 let shownAside = false;
 
 $(document).ready(() => {
-  console.log('Если Вы нашли ошибку, откройте issue или предложите pr - https://github.com/dan-sazonov/old-sudga');
+  console.log('Это бета-версия сайта, которая требует значительных доработок и фиксов, так что не пугайтесь столь жуткого кода - это временная мера. Если Вы хотите принять участие в разработке или рассказать о найденных ошибках, чекните репо на гх - https://github.com/dan-sazonov/old-sudga');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
   vkInit();
