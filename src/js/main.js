@@ -24,6 +24,7 @@ const searchBtn = '.header__search-btn';
 const searchForm = '.search';
 const shareBtn = '.toggle-social';
 const shareItem = '.ya-share2__item';
+const featureLanding = '.featureLanding';
 const date = new Date();
 const currentYear = date.getFullYear();
 const breakpoints = {
@@ -111,7 +112,7 @@ $(document).ready(() => {
   }
 
   // меняем блоки на заглушки, задаем модальные окна
-  $('.featureLanding').attr({
+  $(featureLanding).attr({
     'data-toggle': 'modal',
     'data-target': '#modalLanding'
   });
@@ -137,7 +138,9 @@ $(document).ready(() => {
       $(searchForm).addClass('search_active');
     }, 20);
   }
-
+  if (realWidth <= breakpoints.md) {
+    $(featureLanding).on('click', hideSearchForm)
+  }
   // обработчики кликов
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
