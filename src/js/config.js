@@ -1,6 +1,6 @@
 const debug = {
   showCookieAlert: false,
-  showVkWidget: false,
+  showVkWidget: true,
   showPopularArticle: true
 };
 

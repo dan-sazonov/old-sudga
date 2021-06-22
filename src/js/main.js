@@ -6,7 +6,7 @@ import 'bootstrap/js/dist/util';
 import 'bootstrap/js/dist/alert';
 import 'bootstrap/js/dist/button';
 import 'bootstrap/js/dist/modal';
-import vkInit from './vk';
+import {vkInit} from './vk';
 import debug from './config';
 import {landBlock} from './landings';
 // import 'bootstrap/js/dist/carousel';
@@ -139,7 +139,7 @@ $(document).ready(() => {
     }, 20);
   }
   if (realWidth <= breakpoints.md) {
-    $(featureLanding).on('click', hideSearchForm)
+    $(featureLanding).on('click', hideSearchForm);
   }
   // обработчики кликов
   $(asideShowBtn).on(clickEvent, showAside);
