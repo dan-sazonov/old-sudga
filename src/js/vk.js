@@ -1,5 +1,5 @@
 import * as $ from 'jquery';
-import debug from './config';
+import {debug} from './config';
 
 const allowedHosts = ['old-sud.ga', 'old-sudga.github.io', 'xn----7sbbgido7cwbu3ka.xn--p1acf'];
 let currentHost = '';
