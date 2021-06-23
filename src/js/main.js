@@ -18,34 +18,8 @@ import {landBlock} from './landings';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
-// todo: это работает. если накосячишь с cookielib, юзай эту дичь
-// function setCookie(name, value, options = {}) {
-//
-//   options = {
-//     path: '/',
-//     // при необходимости добавьте другие значения по умолчанию
-//     ...options
-//   };
-//
-//   if (options.expires instanceof Date) {
-//     options.expires = options.expires.toUTCString();
-//   }
-//
-//   let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-//
-//   for (let optionKey in options) {
-//     updatedCookie += "; " + optionKey;
-//     let optionValue = options[optionKey];
-//     if (optionValue !== true) {
-//       updatedCookie += "=" + optionValue;
-//     }
-//   }
-//
-//   document.cookie = updatedCookie;
-// }
-//
-// // Пример использования:
-// setCookie('fuck', 'John', {secure: true, 'max-age': 60 * 60 * 24 * 7});
+setCookie('name', 'value11',  {secure: true, 'max-age': 60 * 60 * 24 * 7, samesite: 'lax'}); // это работает
+console.log(getCookie('name'));
 
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
