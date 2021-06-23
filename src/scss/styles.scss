@@ -424,9 +424,10 @@ address {
 @include media-breakpoint-only(sm) {
   .main .article {
     width: 100%;
+    max-width: 80%;
+    // да, я знаю что можно одной строкой
     padding-right: 0;
     padding-left: 0;
-    max-width: 80%;
   }
   .article__social_footer {
     justify-content: center !important;
@@ -488,8 +489,5 @@ address {
   }
   .popular__item_xs {
     display: list-item;
-  }
-  .article__popular {
-    //position: absolute;
   }
 }
