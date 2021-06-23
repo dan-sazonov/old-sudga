@@ -18,9 +18,6 @@ import {landBlock} from './landings';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
-setCookie('name', 'value11',  {secure: true, 'max-age': 60 * 60 * 24 * 7, samesite: 'lax'}); // это работает
-console.log(getCookie('name'));
-
 const asideHideBtn = '.aside__hide-btn';
 const asideShowBtn = '.header__aside-btn';
 const searchBtn = '.header__search-btn';
@@ -28,8 +25,10 @@ const searchForm = '.search';
 const shareBtn = '.toggle-social';
 const shareItem = '.ya-share2__item';
 const featureLanding = '.featureLanding';
+
 const date = new Date();
 const currentYear = date.getFullYear();
+
 const breakpoints = {
   'sm': 576,
   'md': 768,
@@ -38,6 +37,7 @@ const breakpoints = {
 };
 const realWidth = window.innerWidth;
 // const realHeight = window.innerHeight;
+
 const isTouch = realWidth < breakpoints.lg;
 const clickEvent = $.isFunction($.fn.tap) && isTouch ? 'tap' : 'click';
 
@@ -45,12 +45,9 @@ let shownSocialButton = false;
 let shownAside = false;
 
 $(document).ready(() => {
-  console.log('Это бета-версия сайта, которая требует значительных доработок и фиксов, так что не пугайтесь столь жуткого кода - это временная мера. Если Вы хотите принять участие в разработке или рассказать о найденных ошибках, чекните репо на гх - https://github.com/dan-sazonov/old-sudga');
   $('#from-jquery').append('Если этот текст можно прочитать, значит на фронте все правильно.');
 
   vkInit();
-
-  $('.cur-year').text(currentYear);
 
   function hideSearchForm() {
     // сворачивает форму поиска
@@ -115,6 +112,8 @@ $(document).ready(() => {
   }
 
   // меняем блоки на заглушки, задаем модальные окна
+  $('.cur-year').text(currentYear);
+
   $(featureLanding).attr({
     'data-toggle': 'modal',
     'data-target': '#modalLanding'
@@ -126,8 +125,8 @@ $(document).ready(() => {
     $('.popular__landing-block').removeClass('d-none');
   }
 
-  if (!debug.showCookieAlert) {
-    $('.cookie-alert').removeClass('d-flex').addClass('hidden');
+  if (debug.showCookieAlert) {
+    $('.cookie-alert').removeClass('d-none').addClass('d-flex');
   }
 
   // обнуляем заглушенные счетчики
@@ -144,6 +143,7 @@ $(document).ready(() => {
   if (realWidth <= breakpoints.md) {
     $(featureLanding).on('click', hideSearchForm);
   }
+
   // обработчики кликов
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
@@ -166,3 +166,5 @@ $(document).ready(() => {
     window.print();
   });
 });
+
+console.log('Это бета-версия сайта, которая требует значительных доработок и фиксов, так что не пугайтесь столь жуткого кода - это временная мера. Если Вы хотите принять участие в разработке или рассказать о найденных ошибках, чекните репо на гх - https://github.com/dan-sazonov/old-sudga');

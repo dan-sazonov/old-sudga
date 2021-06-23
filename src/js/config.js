@@ -1,5 +1,5 @@
 const debug = {
-  showCookieAlert: false,
+  showCookieAlert: true,
   showVkWidget: true,
   showPopularArticle: true
 };
