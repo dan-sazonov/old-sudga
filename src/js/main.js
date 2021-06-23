@@ -40,6 +40,7 @@ const realWidth = window.innerWidth;
 
 const isTouch = realWidth < breakpoints.lg;
 const clickEvent = $.isFunction($.fn.tap) && isTouch ? 'tap' : 'click';
+let acceptedCookies = getCookie('acceptedCookies') === 'true';
 
 let shownSocialButton = false;
 let shownAside = false;
@@ -111,6 +112,11 @@ $(document).ready(() => {
     }, 20);
   }
 
+  function acceptCookies() {
+    acceptedCookies = true;
+    setCookie('acceptedCookies', 'true', {secure: true, 'max-age': 60 * 60 * 24 * 365, samesite: 'lax'});
+  }
+
   // меняем блоки на заглушки, задаем модальные окна
   $('.cur-year').text(currentYear);
 
@@ -125,7 +131,7 @@ $(document).ready(() => {
     $('.popular__landing-block').removeClass('d-none');
   }
 
-  if (debug.showCookieAlert) {
+  if (debug.showCookieAlert && !acceptedCookies) {
     $('.cookie-alert').removeClass('d-none').addClass('d-flex');
   }
 
@@ -145,6 +151,7 @@ $(document).ready(() => {
   }
 
   // обработчики кликов
+  $('.cookie-alert__close-btn').on('click', acceptCookies);
   $(asideShowBtn).on(clickEvent, showAside);
   $(asideHideBtn).on(clickEvent, hideAside);
   if (isTouch && realWidth <= breakpoints.sm) { // на не сенсорных устр-вах обработчик свайпа не дает выделить текст
