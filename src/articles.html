@@ -1,0 +1,34 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+
+<head>
+    <title>Давняя Суджа: Все статьи</title>
+    @@include('components/_head-com.html') <!-- иконки, настройки браузера (общие) -->
+    <!-- @@include('components/_seo.html') todo: seo для беты-->
+</head>
+
+<body>
+@@include('components/_header.html')
+
+<main class="main">
+    <div class="container">
+        <p>
+            <a href="template.html">шаблон</a>
+            <a href="404.html">404</a>
+            <a href="err.html">err</a>
+            <a href="100.html">Использование материалов</a>
+        </p>
+        <div class="vk_comments" id="vk-comments_index"></div>
+        <div id="vk_comments_land" class="hidden">
+            <i class="far fa-comments"></i>
+            <p><span>Нам не удалось загрузить комментарии.</span><br>Такое бывает при включенном AdBlock или усиленной
+                защите приватности. Отключите их, и все заработает.</p>
+        </div>
+    </div>
+</main>
+
+@@include('components/_footer.html')
+<script src="js/main.js"></script>
+
+</body>
+</html>
