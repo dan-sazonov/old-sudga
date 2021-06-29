@@ -2,33 +2,33 @@ const projectFolder = 'dist';
 const sourceFolder = 'src';
 const path = {
   build: {
-    html: `${projectFolder  }/`,
-    css: `${projectFolder  }/css/`,
-    js: `${projectFolder  }/js/`,
-    ico: [`${projectFolder  }/ico/`, `${projectFolder  }/`],
-    img: `${projectFolder  }/img/`,
+    html: `${projectFolder}/`,
+    css: `${projectFolder}/css/`,
+    js: `${projectFolder}/js/`,
+    ico: [`${projectFolder}/ico/`, `${projectFolder}/`],
+    img: `${projectFolder}/img/`,
   },
   src: {
-    html: [`${sourceFolder  }/**/*.html`, `!${  sourceFolder  }/components/_*.html`],
-    css: `${sourceFolder  }/scss/styles.scss`,
+    html: [`${sourceFolder}/legacy/*.html`, `${sourceFolder}/*.html`, `!${sourceFolder}/components/_*.html`],
+    css: `${sourceFolder}/scss/styles.scss`,
     js: ['src/js/tmp/main.js', 'src/js/modernizr.min.js', 'src/js/plugins.js'],
-    ico: [`${sourceFolder  }/ico/*.+(png|jpg|gif|ico|svg|webp)`, `${sourceFolder  }/favicon.ico`],
-    img: `${sourceFolder  }/img/*.+(png|jpg|gif|ico|svg|webp)`,
-    fonts: `${sourceFolder  }/**/*.+(ttf|otf|woff|eot|woff2)`,
+    ico: [`${sourceFolder}/ico/*.+(png|jpg|gif|ico|svg|webp)`, `${sourceFolder}/favicon.ico`],
+    img: `${sourceFolder}/img/*.+(png|jpg|gif|ico|svg|webp)`,
+    fonts: `${sourceFolder}/**/*.+(ttf|otf|woff|eot|woff2)`,
   },
   watch: {
-    html: `${sourceFolder  }/**/*.html`,
-    css: `${sourceFolder  }/scss/**/*.scss`,
-    ico: [`${sourceFolder  }/ico/*.+(png|jpg|gif|ico|svg|webp)`, `${sourceFolder  }/favicon.ico`],
-    img: `${sourceFolder  }/**/*.+(png|jpg|gif|ico|svg|webp)`,
-    js: `${sourceFolder  }/**/*.js`,
+    html: `${sourceFolder}/**/*.html`,
+    css: `${sourceFolder}/scss/**/*.scss`,
+    ico: [`${sourceFolder}/ico/*.+(png|jpg|gif|ico|svg|webp)`, `${sourceFolder}/favicon.ico`],
+    img: `${sourceFolder}/**/*.+(png|jpg|gif|ico|svg|webp)`,
+    js: `${sourceFolder}/**/*.js`,
   },
   scripts: {
-    main: `${sourceFolder  }/js/main.js`,
-    modernizr: `${sourceFolder  }/js/modernizr.min.js`,
+    main: `${sourceFolder}/js/main.js`,
+    modernizr: `${sourceFolder}/js/modernizr.min.js`,
   },
-  clean: `./${  projectFolder  }/`,
-  lint: [`${sourceFolder  }/js/**/*.js`, './*.js'],
+  clean: `./${projectFolder}/`,
+  lint: [`${sourceFolder}/js/**/*.js`, './*.js'],
 };
 
 // переменные плагинов
@@ -105,7 +105,7 @@ function js(done) {
 gulp.task('browser_sync', () => {
   browserSync.init({
     server: {
-      baseDir: `./${  projectFolder  }/`
+      baseDir: `./${projectFolder}/`
     },
     port: 3000,
     browser: 'firefox'
@@ -122,8 +122,8 @@ gulp.task('icons', () => src(path.src.ico[0])
   .pipe(dest(path.build.ico[0]))
   .pipe(browserSync.stream()));
 
-gulp.task('files', () => src([`${sourceFolder  }/browserconfig.xml`, `${sourceFolder  }/humans.txt`,
-  `${sourceFolder  }/robots.txt`, `${sourceFolder  }/site.webmanifest`, `${sourceFolder  }/LICENSE.txt`, path.src.ico[1],
+gulp.task('files', () => src([`${sourceFolder}/browserconfig.xml`, `${sourceFolder}/humans.txt`,
+  `${sourceFolder}/robots.txt`, `${sourceFolder}/site.webmanifest`, `${sourceFolder}/LICENSE.txt`, path.src.ico[1],
   path.src.fonts])
   .pipe(dest(path.build.html))
   .pipe(browserSync.stream()));

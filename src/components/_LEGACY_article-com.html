@@ -1,0 +1,91 @@
+<section class="article__footer_print d-none d-print-flex w-100 justify-content-around">
+    <h1 class="item_center logo">давняя суджа</h1>
+    <div class="article__copyright cc-icons">
+        <i class="fab fa-creative-commons"></i>
+        <i class="fab fa-creative-commons-by"></i>
+        <i class="fab fa-creative-commons-sa"></i>
+    </div>
+</section>
+<aside class="col-lg-4 d-none d-lg-block aside-lg d-print-none">
+    <section class="aside-lg__contribution">
+        <p>
+            Хотите принять участие в развитии нашего проекта?
+            Предложить новые объекты для размещения QR-кодов?
+            Разместить свою публикацию о прошлом нашего края?
+            Рассказать о ваших предках?
+        </p>
+        <p>Подробнее <a href="404.html">здесь</a>.</p>
+    </section>
+    <section class="aside-lg__popular article__popular">
+        @@include('./_POPULAR.html')
+    </section>
+</aside>
+</div>
+<section class="article__social col-lg-8 d-print-none">
+    <ul class="d-flex justify-content-between article__action article__action_xs article__share_primary">
+        <li class="likes">
+            <button type="button" class="featureLanding"><i class="far fa-thumbs-up"></i>
+                <span class="likes__counter">32</span></button>
+        </li>
+        <li class="dislikes">
+            <button type="button" class="featureLanding"><i class="far fa-thumbs-down"></i>
+                <span class="dislikes__counter">5</span></button>
+        </li>
+        <li class="views">
+            <button type="button" class="featureLanding"><i class="far fa-eye"></i>
+                <span class="views__counter">150</span></button>
+        </li>
+        <li class="share d-none d-sm-block">
+            <button type="button" class="toggle-social"><i class="fas fa-share"></i><span>Поделиться</span>
+            </button>
+        </li>
+        <li class="d-none d-lg-block">
+            <button type="button" class="to-print"><i class="fas fa-print"></i><span>Распечатать</span></button>
+        </li>
+    </ul>
+    <ul class="d-none justify-content-between article__action article__action_xs article__share">
+        <li class="w-100 d-flex justify-content-center">
+            <div class="ya-share2" data-curtain data-size="l" data-shape="round"
+                 data-services="vkontakte,facebook,odnoklassniki,telegram,viber,whatsapp"></div>
+        </li>
+    </ul>
+    <div class="article__social_footer">
+        <div class="share d-flex d-sm-none item_center">
+            <div>
+                <button type="button" class="toggle-social"><i class="fas fa-share"></i><span>Поделиться</span>
+                </button>
+            </div>
+        </div>
+        <div class="typo-alert d-none d-md-flex item_center">Нашли ошибку? Выделите её и нажмите Ctrl+Enter, мы
+            исправим.
+        </div>
+        <div class="article__copyright d-flex flex-column justify-content-between">
+            <div class="cc-icons">
+                <i class="fab fa-creative-commons"></i>
+                <i class="fab fa-creative-commons-by"></i>
+                <i class="fab fa-creative-commons-sa"></i>
+            </div>
+            <a href="../legacy/100.html" class="item_center">Что это значит?</a>
+        </div>
+    </div>
+</section>
+<section class="article__comments col-lg-8 d-print-none">
+    <div class="vk_comments" id="vk-comments_template"></div>
+    <div id="vk_comments_land" class="hidden">
+        <i class="far fa-comments"></i>
+        <p><span>Нам не удалось загрузить комментарии.</span><br>Такое бывает при включенном AdBlock или
+            усиленной
+            защите приватности. Отключите их, и все заработает.</p>
+    </div>
+</section>
+<section class="article__popular d-lg-none d-print-none">
+    @@include('./_POPULAR.html')
+</section>
+</div>
+</main>
+
+@@include('./_footer.html')
+<script src="js/main.js"></script>
+
+</body>
+</html>
