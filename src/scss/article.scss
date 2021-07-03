@@ -141,11 +141,6 @@
       }
     }
 
-    .popular__list li {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
     .article__text {
       @for $i from 1 through 4 {
         h3#h3-#{$i} {
