@@ -65,6 +65,7 @@
     "papaparse": "^5.3.0",
     "postcss": "^8.2.15",
     "prettier": "^2.2.1",
+    "socket.io-parser": "^3.4.1",
     "trim-newlines": "^3.0.1",
     "ua-parser-js": "^0.7.28",
     "vinyl-source-stream": "^2.0.0",
